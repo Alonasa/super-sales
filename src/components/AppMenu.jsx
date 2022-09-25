@@ -1,4 +1,4 @@
-import React, {MouseEvent} from 'react';
+import React, {useState} from 'react';
 import {alpha, styled} from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -16,7 +16,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 
-export const Search = styled('div')(({theme}) => ({
+const Search = styled('div')(({theme}) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.common.white, 0.15),
@@ -32,7 +32,7 @@ export const Search = styled('div')(({theme}) => ({
   },
 }));
 
-export const SearchIconWrapper = styled('div')(({theme}) => ({
+const SearchIconWrapper = styled('div')(({theme}) => ({
   padding: theme.spacing(0, 2),
   height: '100%',
   position: 'absolute',
@@ -42,7 +42,7 @@ export const SearchIconWrapper = styled('div')(({theme}) => ({
   justifyContent: 'center',
 }));
 
-export const StyledInputBase = styled(InputBase)(({theme}) => ({
+const StyledInputBase = styled(InputBase)(({theme}) => ({
   color: 'inherit',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
@@ -56,16 +56,15 @@ export const StyledInputBase = styled(InputBase)(({theme}) => ({
   },
 }));
 
-export const PrimarySearchAppBar = () => {
-  const [anchorEl, setAnchorEl] = React.useState < null | HTMLElement > (null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
-  React.useState < null | HTMLElement > (null);
+export const AppMenu = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  const handleProfileMenuOpen = (e: MouseEvent<HTMLElement>) => {
-    setAnchorEl(e.currentTarget);
+  const handleProfileMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
   };
 
   const handleMobileMenuClose = () => {
@@ -77,7 +76,7 @@ export const PrimarySearchAppBar = () => {
     handleMobileMenuClose();
   };
 
-  const handleMobileMenuOpen = (event: MouseEvent<HTMLElement>) => {
+  const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
@@ -151,7 +150,8 @@ export const PrimarySearchAppBar = () => {
           <AccountCircle/>
         </IconButton>
         <p>Profile</p>
-      </MenuItem></Menu>
+      </MenuItem>
+    </Menu>
   );
 
   return (
@@ -173,7 +173,7 @@ export const PrimarySearchAppBar = () => {
             component="div"
             sx={{display: {xs: 'none', sm: 'block'}}}
           >
-            MUI
+            Super Sales
           </Typography>
           <Search>
             <SearchIconWrapper>

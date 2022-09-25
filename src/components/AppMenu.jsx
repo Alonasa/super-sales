@@ -15,6 +15,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import {Favorite} from "@mui/icons-material";
 
 const Search = styled('div')(({theme}) => ({
   position: 'relative',
@@ -128,6 +129,15 @@ export const AppMenu = () => {
         <p>Messages</p>
       </MenuItem>
       <MenuItem>
+        <IconButton size="large" aria-label="show products from wishlist"
+                    color="inherit">
+          <Badge badgeContent={10} color="error">
+            <Favorite/>
+          </Badge>
+        </IconButton>
+        <p>Wishlist</p>
+      </MenuItem>
+      <MenuItem>
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
@@ -190,6 +200,12 @@ export const AppMenu = () => {
                         color="inherit">
               <Badge badgeContent={4} color="error">
                 <MailIcon/>
+              </Badge>
+            </IconButton>
+            <IconButton size="large" aria-label="show products from wishlist"
+                        color="inherit">
+              <Badge badgeContent={10} color="error">
+                <Favorite/>
               </Badge>
             </IconButton>
             <IconButton

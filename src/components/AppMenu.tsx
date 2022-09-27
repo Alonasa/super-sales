@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {MouseEvent, useState} from 'react';
 import {alpha, styled} from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -58,13 +58,13 @@ const StyledInputBase = styled(InputBase)(({theme}) => ({
 }));
 
 export const AppMenu = () => {
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  const handleProfileMenuOpen = (event ) => {
+  const handleProfileMenuOpen = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
 

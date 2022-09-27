@@ -64,7 +64,7 @@ export const AppMenu = () => {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  const handleProfileMenuOpen = (event) => {
+  const handleProfileMenuOpen = (event ) => {
     setAnchorEl(event.currentTarget);
   };
 

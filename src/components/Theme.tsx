@@ -1,8 +1,7 @@
-import React from 'react';
-import {ThemeOptions} from '@mui/material';
+import {createTheme} from '@mui/material';
 
 
-export const themeOptions: ThemeOptions = {
+export const theme = createTheme({
   palette: {
 	primary: {
 	  main: '#6b4760',
@@ -11,4 +10,4 @@ export const themeOptions: ThemeOptions = {
 	  main: '#d56ea3',
 	},
   },
-};
+});

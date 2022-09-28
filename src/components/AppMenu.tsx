@@ -15,7 +15,9 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import {Favorite} from "@mui/icons-material";
+import {Favorite} from '@mui/icons-material';
+import AddIcon from '@mui/icons-material/Add';
+import {Button} from '@mui/material';
 
 const Search = styled('div')(({theme}) => ({
   position: 'relative',
@@ -100,6 +102,7 @@ export const AppMenu = () => {
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Post add</MenuItem>
     </Menu>
   );
 
@@ -148,6 +151,12 @@ export const AppMenu = () => {
           </Badge>
         </IconButton>
         <p>Notifications</p>
+      </MenuItem>
+      <MenuItem>
+        <Badge>
+          <AddIcon/>
+        </Badge>
+        <p>Post add</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -217,6 +226,7 @@ export const AppMenu = () => {
                 <NotificationsIcon/>
               </Badge>
             </IconButton>
+            <Button variant={'text'} color={"secondary"}>Post Add</Button>
             <IconButton
               size="large"
               edge="end"

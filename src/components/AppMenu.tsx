@@ -122,7 +122,7 @@ export const AppMenu = () => {
     >
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
+          <Badge badgeContent={4} color="secondary">
             <MailIcon/>
           </Badge>
         </IconButton>
@@ -131,7 +131,7 @@ export const AppMenu = () => {
       <MenuItem>
         <IconButton size="large" aria-label="show products from wishlist"
                     color="inherit">
-          <Badge badgeContent={10} color="error">
+          <Badge badgeContent={10} color="secondary">
             <Favorite/>
           </Badge>
         </IconButton>
@@ -143,7 +143,7 @@ export const AppMenu = () => {
           aria-label="show 17 new notifications"
           color="inherit"
         >
-          <Badge badgeContent={17} color="error">
+          <Badge badgeContent={17} color="secondary">
             <NotificationsIcon/>
           </Badge>
         </IconButton>
@@ -198,13 +198,13 @@ export const AppMenu = () => {
           <Box sx={{display: {xs: 'none', md: 'flex'}}}>
             <IconButton size="large" aria-label="show 4 new mails"
                         color="inherit">
-              <Badge badgeContent={4} color="error">
+              <Badge badgeContent={4} color="secondary">
                 <MailIcon/>
               </Badge>
             </IconButton>
             <IconButton size="large" aria-label="show products from wishlist"
                         color="inherit">
-              <Badge badgeContent={10} color="error">
+              <Badge badgeContent={10} color="secondary">
                 <Favorite/>
               </Badge>
             </IconButton>
@@ -213,7 +213,7 @@ export const AppMenu = () => {
               aria-label="show 17 new notifications"
               color="inherit"
             >
-              <Badge badgeContent={17} color="error">
+              <Badge badgeContent={17} color="secondary">
                 <NotificationsIcon/>
               </Badge>
             </IconButton>

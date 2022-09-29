@@ -226,7 +226,7 @@ export const AppMenu = () => {
                 <NotificationsIcon/>
               </Badge>
             </IconButton>
-            <Button variant={'text'} color={"secondary"}>Post Add</Button>
+            <Button style={{color: "#fff"}}>Post Add</Button>
             <IconButton
               size="large"
               edge="end"

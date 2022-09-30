@@ -1,9 +1,10 @@
 import React from 'react';
+import {SearchBar} from './SearchBar';
 
 export const Body = () => {
   return (
     <section>
-      <h3>Main content</h3>
+      <SearchBar/>
     </section>
   );
 };

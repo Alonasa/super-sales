@@ -4,7 +4,7 @@ import {alpha, styled} from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import {AddLocation} from '@mui/icons-material';
 import {Button} from '@mui/material';
-import { purple } from '@mui/material/colors';
+import {purple} from '@mui/material/colors';
 
 const color = purple[50];
 
@@ -20,8 +20,23 @@ const Search = styled('div')(({theme}) => ({
   },
 }));
 
+const SearchWrapper = styled('div')(({theme}) => ({
+  [theme.breakpoints.up('xs')]: {
+    display: 'flex',
+	flexDirection:'column',
+	alignItems: 'center',
+	flexWrap: 'wrap',
+	justifyContent: 'space-between',
+  },
+  [theme.breakpoints.up('sm')]: {
+    flexDirection: 'row',
+	alignItems: 'baseline',
+  }
+  }));
+
 const SearchIconWrapper = styled('div')(({theme}) => ({
   height: '100%',
+  marginBottom: '10px',
   pointerEvents: 'none',
   display: 'flex',
   alignItems: 'center',
@@ -48,26 +63,26 @@ export const SearchBar = () => {
   return (
 	<div style={{padding: '2%', backgroundColor: color}}>
 	  <Search>
-		<SearchIconWrapper>
-		  <div>
+		<SearchWrapper>
+		  <SearchIconWrapper>
 			<SearchIcon/>
 			<StyledInputBase
 			  placeholder="What you are looking for?"
 			  inputProps={{'aria-label': 'search'}}
 			/>
-		  </div>
-		  <div>
+		  </SearchIconWrapper>
+		  <SearchIconWrapper>
 			<AddLocation/>
 			<StyledInputBase
-			  placeholder="Entire world"
-			  inputProps={{'aria-label': 'Search entire world'}}
+			  placeholder="Where"
+			  inputProps={{'aria-label': 'Where you looking'}}
 			/>
-		  </div>
+		  </SearchIconWrapper>
 		  <Button variant={'contained'}>
 			<SearchIcon/>
 			Search
 		  </Button>
-		</SearchIconWrapper>
+		</SearchWrapper>
 	  </Search>
 	</div>
   );

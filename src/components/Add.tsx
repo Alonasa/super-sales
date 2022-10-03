@@ -1,8 +1,9 @@
-import * as React from 'react';
+import React from 'react';
 import {styled} from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Unstable_Grid2';
+import {Card, CardMedia} from '@mui/material';
 
 const Item = styled(Paper)(({theme}) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -28,7 +29,15 @@ export const Add = (props: AddsType) => {
 		{props.items.map(p => {
 		  return (
 			<Grid key={p.id} xs={12} sm={6} md={4}>
-			  <Item>{p.title}</Item>
+			  <Item>
+				<Card>
+				  <CardMedia
+					component="img"
+					height="250"
+					alt="basic picture"
+					image="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/600px-Gull_portrait_ca_usa.jpg"/>
+				</Card>
+			  </Item>
 			</Grid>
 		  )
 		})}

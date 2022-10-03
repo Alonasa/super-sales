@@ -3,12 +3,12 @@ import {Container} from '@mui/material';
 import {Add} from './Add';
 
 const items = [
-  {id: 0, title: '1'},
-  {id: 1, title: '1'},
-  {id: 2, title: '1'},
-  {id: 3, title: '1'},
-  {id: 4, title: '1'},
-  {id: 5, title: '1'},
+  {id: 0, title: '1', description: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica', price: 20},
+  {id: 1, title: '2', description: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica', price: 20},
+  {id: 2, title: '3', description: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica', price: 20},
+  {id: 3, title: '4', description: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica', price: 20},
+  {id: 4, title: '5', description: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica', price: 20},
+  {id: 5, title: '6', description: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica', price: 20},
 ]
 
 export const Ads = () => {

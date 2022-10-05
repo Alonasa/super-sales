@@ -3,7 +3,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import {alpha, styled} from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import {AddLocation} from '@mui/icons-material';
-import {Button} from '@mui/material';
+import {Button, Container} from '@mui/material';
 import {purple} from '@mui/material/colors';
 
 const color = purple[50];
@@ -62,26 +62,28 @@ export const SearchBar = () => {
   return (
 	<div style={{padding: '2%', backgroundColor: color}}>
 	  <Search>
-		<SearchWrapper>
-		  <SearchIconWrapper>
-			<SearchIcon/>
-			<StyledInputBase
-			  placeholder="What you are looking for?"
-			  inputProps={{'aria-label': 'search'}}
-			/>
-		  </SearchIconWrapper>
-		  <SearchIconWrapper>
-			<AddLocation/>
-			<StyledInputBase
-			  placeholder="Where"
-			  inputProps={{'aria-label': 'Where you looking'}}
-			/>
-		  </SearchIconWrapper>
-		  <Button variant={'contained'}>
-			<SearchIcon/>
-			Search
-		  </Button>
-		</SearchWrapper>
+		<Container>
+		  <SearchWrapper>
+			<SearchIconWrapper>
+			  <SearchIcon/>
+			  <StyledInputBase
+				placeholder="What you are looking for?"
+				inputProps={{'aria-label': 'search'}}
+			  />
+			</SearchIconWrapper>
+			<SearchIconWrapper>
+			  <AddLocation/>
+			  <StyledInputBase
+				placeholder="Where"
+				inputProps={{'aria-label': 'Where you looking'}}
+			  />
+			</SearchIconWrapper>
+			<Button variant={'contained'}>
+			  <SearchIcon/>
+			  Search
+			</Button>
+		  </SearchWrapper>
+		</Container>
 	  </Search>
 	</div>
   );

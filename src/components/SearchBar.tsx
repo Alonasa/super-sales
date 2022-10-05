@@ -22,17 +22,17 @@ const Search = styled('div')(({theme}) => ({
 
 const SearchWrapper = styled('div')(({theme}) => ({
   [theme.breakpoints.up('xs')]: {
-    display: 'flex',
-	flexDirection:'column',
+	display: 'flex',
+	flexDirection: 'column',
 	alignItems: 'center',
 	flexWrap: 'wrap',
 	justifyContent: 'space-between',
   },
   [theme.breakpoints.up('sm')]: {
-    flexDirection: 'row',
+	flexDirection: 'row',
 	alignItems: 'baseline',
   }
-  }));
+}));
 
 const SearchIconWrapper = styled('div')(({theme}) => ({
   height: '100%',

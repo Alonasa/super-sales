@@ -1,6 +1,6 @@
 import React from 'react';
-import {Ads} from './Ads';
-import {SearchBar} from './SearchBar';
+import {Ads} from '../Ads/Ads';
+import {SearchBar} from '../Search/SearchBar';
 import {Container} from '@mui/material';
 
 export const Body = () => {

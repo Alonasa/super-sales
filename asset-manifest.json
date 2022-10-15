@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Trello/static/css/main.073c9b0a.css",
+    "main.js": "/Trello/static/js/main.129f4f89.js",
+    "index.html": "/Trello/index.html",
+    "main.073c9b0a.css.map": "/Trello/static/css/main.073c9b0a.css.map",
+    "main.129f4f89.js.map": "/Trello/static/js/main.129f4f89.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.129f4f89.js"
+  ]
+}

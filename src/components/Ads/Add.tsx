@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Unstable_Grid2';
 import {
-  Button,
   Card,
   CardActions,
   CardContent,
@@ -12,7 +11,7 @@ import {
   IconButton
 } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import {Favorite, FavoriteBorder} from '@mui/icons-material';
+import {AddShoppingCart, Favorite, FavoriteBorder} from '@mui/icons-material';
 
 type AddType = {
   id: number
@@ -53,18 +52,21 @@ export const Add = (props: AddsType) => {
 					  {p.title}
 					</Typography>
 					<Typography component="span">
-					  {`${p.price} $`}
-					</Typography>
-					<Typography variant="body2" color="text.secondary">
-					  {p.description}
-					</Typography>
-				  </CardContent>
-				  <CardActions>
-					<IconButton>
-                      {p.isFavorite ? <FavoriteBorder color={'primary'}/> : <Favorite color={'primary'}/> }
-					</IconButton>
-					<Button size="small">Add to card</Button>
-				  </CardActions>
+                      {`${p.price} $`}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {p.description}
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <IconButton>
+                      {p.isFavorite ? <FavoriteBorder color={'primary'}/> :
+                        <Favorite color={'primary'}/>}
+                    </IconButton>
+                    <IconButton>
+                      <AddShoppingCart color={'primary'}/>
+                    </IconButton>
+                  </CardActions>
 				</Card>
 			  </Item>
 			</Grid>

@@ -3,8 +3,28 @@ import {styled} from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Unstable_Grid2';
-import {Button, Card, CardActions, CardContent, CardMedia} from '@mui/material';
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  IconButton
+} from '@mui/material';
 import Typography from '@mui/material/Typography';
+import {Favorite, FavoriteBorder} from '@mui/icons-material';
+
+type AddType = {
+  id: number
+  title: string
+  description: string
+  price: number
+  isFavorite: boolean
+}
+
+export type AddsType = {
+  items: Array<AddType>
+}
 
 const Item = styled(Paper)(({theme}) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -13,17 +33,6 @@ const Item = styled(Paper)(({theme}) => ({
   textAlign: 'center',
   color: theme.palette.text.secondary,
 }));
-
-type AddType = {
-  id: number
-  title: string
-  description: string
-  price: number
-}
-
-export type AddsType = {
-  items: Array<AddType>
-}
 
 export const Add = (props: AddsType) => {
   return (
@@ -51,7 +60,9 @@ export const Add = (props: AddsType) => {
 					</Typography>
 				  </CardContent>
 				  <CardActions>
-					<Button size="small">Save</Button>
+					<IconButton>
+                      {p.isFavorite ? <FavoriteBorder color={'primary'}/> : <Favorite color={'primary'}/> }
+					</IconButton>
 					<Button size="small">Add to card</Button>
 				  </CardActions>
 				</Card>

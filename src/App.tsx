@@ -6,6 +6,9 @@ import {Footer} from './components/Footer/Footer';
 import {theme} from './components/Theme';
 import {ThemeProvider} from '@mui/material';
 import {Route, Routes} from 'react-router-dom';
+import {PostAdd} from './components/PostAdd/PostAdd';
+import {Profile} from './components/Profile/Profile';
+import {MyAccount} from './components/MyAccount/MyAccount';
 
 function App() {
   return (
@@ -14,6 +17,9 @@ function App() {
         <Head/>
         <Routes>
           <Route path="/" element={<Body/>}/>
+          <Route path="post-add" element={<PostAdd/>}/>
+          <Route path="profile" element={<Profile/>}/>
+          <Route path="my-account" element={<MyAccount/>}/>
         </Routes>
         <Footer/>
       </ThemeProvider>

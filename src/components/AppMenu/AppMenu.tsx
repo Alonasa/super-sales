@@ -1,4 +1,5 @@
 import React, {MouseEvent, useState} from 'react';
+import {Link} from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -58,9 +59,9 @@ export const AppMenu = () => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Post add</MenuItem>
+      <Link to="/profile"><MenuItem onClick={handleMenuClose}>Profile</MenuItem></Link>
+      <Link to="/my-account"><MenuItem onClick={handleMenuClose}>My account</MenuItem></Link>
+      <Link to="/post-add"><MenuItem onClick={handleMenuClose}>Post add</MenuItem></Link>
     </Menu>
   );
 

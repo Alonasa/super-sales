@@ -15,7 +15,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import {Favorite} from '@mui/icons-material';
 import {Button, Container} from '@mui/material';
-
+import styles from './AppMenu.module.css';
 
 export const AppMenu = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -58,8 +58,10 @@ export const AppMenu = () => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <Link to="/profile"><MenuItem onClick={handleMenuClose}>Profile</MenuItem></Link>
-      <Link to="/my-account"><MenuItem onClick={handleMenuClose}>My account</MenuItem></Link>
+      <Link to="/profile" className={styles.menu__link}><MenuItem
+        onClick={handleMenuClose}>Profile</MenuItem></Link>
+      <Link to="/my-account" className={styles.menu__link}><MenuItem
+        onClick={handleMenuClose}>My account</MenuItem></Link>
     </Menu>
   );
 
@@ -80,14 +82,17 @@ export const AppMenu = () => {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <MailIcon/>
-          </Badge>
-        </IconButton>
-        <Link to={'/messages'}><p>Messages</p></Link>
-      </MenuItem>
+      <Link className={styles.menu__link} to={'/messages'}>
+        <MenuItem>
+          <IconButton size="large" aria-label="show 4 new mails"
+                      color="inherit">
+            <Badge badgeContent={4} color="secondary">
+              <MailIcon/>
+            </Badge>
+          </IconButton>
+          <p>Messages</p>
+        </MenuItem>
+      </Link>
       <MenuItem>
         <IconButton size="large" aria-label="show products from wishlist"
                     color="inherit">
@@ -148,29 +153,41 @@ export const AppMenu = () => {
             </Typography>
             <Box sx={{flexGrow: 1}}/>
             <Box sx={{display: {xs: 'none', md: 'flex'}}}>
-              <IconButton size="large" aria-label="show 4 new mails"
-                          color="inherit">
-                <Badge badgeContent={4} color="secondary">
-                  <MailIcon/>
-                </Badge>
-              </IconButton>
-              <IconButton size="large" aria-label="show products from wishlist"
-                          color="inherit">
-                <Badge badgeContent={10} color="secondary">
-                  <Favorite/>
-                </Badge>
-              </IconButton>
-              <IconButton
-                size="large"
-                aria-label="show 17 new notifications"
-                color="inherit"
-              >
-                <Badge badgeContent={17} color="secondary">
-                  <NotificationsIcon/>
-                </Badge>
-              </IconButton>
-              <Link to="/post-add" style={{textDecoration: 'none', }}><Button
-                style={{color: '#fff', padding: "10px 8px"}}>Post Add</Button></Link>
+              <Link to={'/messages'}
+                    className={styles.menu__link}>
+                <IconButton size="large" aria-label="show 4 new mails"
+                            color="inherit">
+                  <Badge badgeContent={4} color="secondary">
+                    <MailIcon/>
+                  </Badge>
+                </IconButton>
+              </Link>
+              <Link to={'/favorites'}
+                    className={styles.menu__link}>
+                <IconButton size="large"
+                            aria-label="show products from wishlist"
+                            color="inherit">
+                  <Badge badgeContent={10} color="secondary">
+                    <Favorite/>
+                  </Badge>
+                </IconButton>
+              </Link>
+              <Link to={'/notifications'}
+                    className={styles.menu__link}>
+                <IconButton
+                  size="large"
+                  aria-label="show 17 new notifications"
+                  color="inherit"
+                >
+                  <Badge badgeContent={17} color="secondary">
+                    <NotificationsIcon/>
+                  </Badge>
+                </IconButton>
+              </Link>
+              <Link to="/post-add" className={styles.menu__link}><Button
+                style={{color: 'inherit', padding: '10px 8px'}}>Post
+                Add</Button>
+              </Link>
               <IconButton
                 size="large"
                 edge="end"

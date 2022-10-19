@@ -1,0 +1,8 @@
+.menu__link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu__link:active {
+    color: #d56ea3;
+}

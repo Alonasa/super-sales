@@ -14,7 +14,6 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import {Favorite} from '@mui/icons-material';
-import AddIcon from '@mui/icons-material/Add';
 import {Button, Container} from '@mui/material';
 
 
@@ -61,7 +60,6 @@ export const AppMenu = () => {
     >
       <Link to="/profile"><MenuItem onClick={handleMenuClose}>Profile</MenuItem></Link>
       <Link to="/my-account"><MenuItem onClick={handleMenuClose}>My account</MenuItem></Link>
-      <Link to="/post-add"><MenuItem onClick={handleMenuClose}>Post add</MenuItem></Link>
     </Menu>
   );
 
@@ -88,7 +86,7 @@ export const AppMenu = () => {
             <MailIcon/>
           </Badge>
         </IconButton>
-        <p>Messages</p>
+        <Link to={'/messages'}><p>Messages</p></Link>
       </MenuItem>
       <MenuItem>
         <IconButton size="large" aria-label="show products from wishlist"
@@ -110,12 +108,6 @@ export const AppMenu = () => {
           </Badge>
         </IconButton>
         <p>Notifications</p>
-      </MenuItem>
-      <MenuItem>
-        <Badge>
-          <AddIcon/>
-        </Badge>
-        <p>Post add</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -177,7 +169,8 @@ export const AppMenu = () => {
                   <NotificationsIcon/>
                 </Badge>
               </IconButton>
-              <Button style={{color: "#fff"}}>Post Add</Button>
+              <Link to="/post-add" style={{textDecoration: 'none', }}><Button
+                style={{color: '#fff', padding: "10px 8px"}}>Post Add</Button></Link>
               <IconButton
                 size="large"
                 edge="end"

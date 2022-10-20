@@ -1,5 +1,4 @@
 .footer {
-    display: block;
     margin-top: auto;
-    border: 1px solid inherit;
+    min-height: 30px;
 }

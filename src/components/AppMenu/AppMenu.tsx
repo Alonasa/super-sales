@@ -135,7 +135,7 @@ export const AppMenu = () => {
   );
 
   return (
-    <Box sx={{flexGrow: 1}}>
+    <Box>
       <AppBar position="static">
         <Container>
           <Toolbar>

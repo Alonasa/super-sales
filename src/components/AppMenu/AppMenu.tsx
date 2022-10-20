@@ -154,7 +154,7 @@ export const AppMenu = () => {
               component="div"
               sx={{display: {xs:'block'}}}
             >
-              Super Sales
+              <NavLink to={"/"} className={styles.menu__link}>Super Sales</NavLink>
             </Typography>
             <Box sx={{flexGrow: 1}}/>
             <Box sx={{display: {xs: 'none', md: 'flex'}}}>

@@ -68,7 +68,7 @@ function App() {
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/my-account" element={<MyAccount/>}/>
           <Route path="/messages" element={<Messages/>}/>
-          <Route path="/favorites" element={<Favorites/>}/>
+          <Route path="/favorites" element={<Favorites items={items}/>}/>
         </Routes>
         <Footer/>
       </ThemeProvider>

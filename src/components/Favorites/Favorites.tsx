@@ -1,9 +1,8 @@
 import React from 'react';
+import {Add, AddsType} from '../Ads/Add';
 
-export const Favorites = () => {
+export const Favorites = (props: AddsType) => {
   return (
-	<div>
-	
-	</div>
+	<Add  items={props.items.filter(i => i.isFavorite)}/>
   );
 };

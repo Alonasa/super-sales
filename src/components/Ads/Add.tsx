@@ -60,7 +60,7 @@ export const Add = (props: AddsType) => {
                   </CardContent>
                   <CardActions>
                     <IconButton>
-                      {p.isFavorite ? <FavoriteBorder color={'primary'}/> :
+                      {!p.isFavorite ? <FavoriteBorder color={'primary'}/> :
                         <Favorite color={'primary'}/>}
                     </IconButton>
                     <IconButton>

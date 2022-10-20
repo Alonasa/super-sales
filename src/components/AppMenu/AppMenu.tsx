@@ -1,5 +1,5 @@
 import React, {MouseEvent, useState} from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -16,6 +16,11 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import {Favorite} from '@mui/icons-material';
 import {Button, Container} from '@mui/material';
 import styles from './AppMenu.module.css';
+
+const styleHandler = (data: boolean)=> {
+    return data ? styles.menu__link_active : styles.menu__link
+}
+
 
 export const AppMenu = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -58,10 +63,10 @@ export const AppMenu = () => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <Link to="/profile" className={styles.menu__link}><MenuItem
-        onClick={handleMenuClose}>Profile</MenuItem></Link>
-      <Link to="/my-account" className={styles.menu__link}><MenuItem
-        onClick={handleMenuClose}>My account</MenuItem></Link>
+      <NavLink to="/profile" className={(data)=>styleHandler(data.isActive)}><MenuItem
+        onClick={handleMenuClose}>Profile</MenuItem></NavLink>
+      <NavLink to="/my-account" className={(data)=>styleHandler(data.isActive)}><MenuItem
+        onClick={handleMenuClose}>My account</MenuItem></NavLink>
     </Menu>
   );
 
@@ -82,7 +87,7 @@ export const AppMenu = () => {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <Link className={styles.menu__link} to={'/messages'}>
+      <NavLink to={'/messages'} className={(data)=>styleHandler(data.isActive)}>
         <MenuItem>
           <IconButton size="large" aria-label="show 4 new mails"
                       color="inherit">
@@ -92,7 +97,7 @@ export const AppMenu = () => {
           </IconButton>
           <p>Messages</p>
         </MenuItem>
-      </Link>
+      </NavLink>
       <MenuItem>
         <IconButton size="large" aria-label="show products from wishlist"
                     color="inherit">
@@ -153,17 +158,17 @@ export const AppMenu = () => {
             </Typography>
             <Box sx={{flexGrow: 1}}/>
             <Box sx={{display: {xs: 'none', md: 'flex'}}}>
-              <Link to={'/messages'}
-                    className={styles.menu__link}>
+              <NavLink to={'/messages'}
+                       className={(data)=>styleHandler(data.isActive)}>
                 <IconButton size="large" aria-label="show 4 new mails"
                             color="inherit">
                   <Badge badgeContent={4} color="secondary">
                     <MailIcon/>
                   </Badge>
                 </IconButton>
-              </Link>
-              <Link to={'/favorites'}
-                    className={styles.menu__link}>
+              </NavLink>
+              <NavLink to={'/favorites'}
+                    className={(data)=>styleHandler(data.isActive)}>
                 <IconButton size="large"
                             aria-label="show products from wishlist"
                             color="inherit">
@@ -171,9 +176,9 @@ export const AppMenu = () => {
                     <Favorite/>
                   </Badge>
                 </IconButton>
-              </Link>
-              <Link to={'/notifications'}
-                    className={styles.menu__link}>
+              </NavLink>
+  
+              <NavLink to={'/notifications'} className={(data)=>styleHandler(data.isActive)}>
                 <IconButton
                   size="large"
                   aria-label="show 17 new notifications"
@@ -183,11 +188,11 @@ export const AppMenu = () => {
                     <NotificationsIcon/>
                   </Badge>
                 </IconButton>
-              </Link>
-              <Link to="/post-add" className={styles.menu__link}><Button
+              </NavLink>
+              <NavLink to="/post-add" className={(data)=>styleHandler(data.isActive)}><Button
                 style={{color: 'inherit', padding: '10px 8px'}}>Post
                 Add</Button>
-              </Link>
+              </NavLink>
               <IconButton
                 size="large"
                 edge="end"

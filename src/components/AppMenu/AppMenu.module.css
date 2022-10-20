@@ -6,3 +6,8 @@
 .menu__link:active {
     color: #d56ea3;
 }
+
+.menu__link_active {
+    color: #d56ea3;
+    text-decoration: none;
+}

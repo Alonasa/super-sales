@@ -2,6 +2,7 @@ import React from 'react';
 import Paper from '@mui/material/Paper';
 import styles from './Pricing.module.css';
 import {Button, Grid} from '@mui/material';
+import {CheckCircleOutlineOutlined} from '@mui/icons-material';
 
 type PriceItemType = {
   header: string
@@ -27,7 +28,7 @@ export const Pricing = (props: PricingType) => {
 			  </div>
 			  <div>
 				<ul className={styles.pricing__features}>
-				  {d.features.map(f => <li>{f}</li>)}
+				  {d.features.map(f => <li className={styles.pricing__feature}><CheckCircleOutlineOutlined color='inherit' style={{paddingRight: '15px'}}/>{f}</li>)}
 				</ul>
 				<form className={styles.pricing__submit} method="post">
 				  <Button variant={'outlined'}>Choose Plan</Button>

@@ -21,3 +21,11 @@
     text-align: left;
 }
 
+.pricing__feature {
+    display: flex;
+    align-items: center;
+}
+
+.pricing__feature:hover {
+    color: #d56ea3;
+}

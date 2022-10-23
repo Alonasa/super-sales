@@ -1,0 +1,22 @@
+.pricing {
+    width: 280px;
+}
+
+.pricing__wrapper {
+    padding: 20px;
+}
+
+.pricing__header {
+    margin: 0;
+    padding: 10px;
+    background-color: #6b4760;
+    color: white;
+    border-radius: 3px 3px 0 0;
+}
+
+.pricing__features {
+    padding: 0;
+    list-style: none;
+    text-align: left;
+}
+

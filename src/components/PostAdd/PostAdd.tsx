@@ -1,9 +1,12 @@
 import React from 'react';
+import {Container} from '@mui/material';
+import {Pricing} from '../Pricing/Pricing';
 
 export const PostAdd = () => {
   return (
-	<div>
-	  This is popsting page
-	</div>
+	<Container>
+	  <h3>Choose a posting plan</h3>
+	  <Pricing/>
+	</Container>
   );
 };

@@ -23,9 +23,9 @@ export const Pricing = (props: PricingType) => {
 			<h3 className={styles.pricing__header}>{d.header}</h3>
 			<Paper className={styles.pricing__wrapper}>
 			  <div>
-				<span>{d.header}</span><br/>
-				<span>{d.price}</span>
-			  </div>
+				<h3 style={{margin: '0 0 10px'}}>{d.price}</h3>
+                <span>Per listing</span>
+              </div>
 			  <div>
 				<ul className={styles.pricing__features}>
 				  {d.features.map(f => <li className={styles.pricing__feature}><CheckCircleOutlineOutlined color='inherit' style={{paddingRight: '15px'}}/>{f}</li>)}

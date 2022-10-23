@@ -1,30 +1,42 @@
 import React from 'react';
 import Paper from '@mui/material/Paper';
 import styles from './Pricing.module.css';
-import {Box, Button} from '@mui/material';
+import {Button, Grid} from '@mui/material';
 
-export const Pricing = () => {
+type PriceItemType = {
+  header: string
+  price: string
+  features: Array<string>
+}
+
+type PricingType = {
+  data: Array<PriceItemType>
+}
+
+export const Pricing = (props: PricingType) => {
   return (
-	<div className={styles.pricing}>
-	  <h3 className={styles.pricing__header}>Free</h3>
-	  <Paper className={styles.pricing__wrapper}>
-		<div>
-		  <span>Free</span><br/>
-		  <span>Per Listing</span>
-		</div>
-		<div>
-		  <ul className={styles.pricing__features}>
-			<li>Duration 10 days</li>
-			<li>Image gallery</li>
-			<li>Location</li>
-			<li>Tags, keywords</li>
-			<li>Phone number</li>
-		  </ul>
-		  <form className={styles.pricing__submit} method="post">
-			<Button variant={'outlined'}>Choose Plan</Button>
-		  </form>
-		</div>
-	  </Paper>
-	</div>
-  );
+    <Grid container style={{justifyContent: 'space-evenly'}}>
+	  {props.data.map(d => {
+		return (
+		  <div className={styles.pricing}>
+			<h3 className={styles.pricing__header}>{d.header}</h3>
+			<Paper className={styles.pricing__wrapper}>
+			  <div>
+				<span>{d.header}</span><br/>
+				<span>{d.price}</span>
+			  </div>
+			  <div>
+				<ul className={styles.pricing__features}>
+				  {d.features.map(f => <li>{f}</li>)}
+				</ul>
+				<form className={styles.pricing__submit} method="post">
+				  <Button variant={'outlined'}>Choose Plan</Button>
+				</form>
+			  </div>
+			</Paper>
+		  </div>
+		)
+	  })}
+	</Grid>
+  )
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Dialog.module.css';
+import {NavLink} from 'react-router-dom';
 
 type DialogsType = {
   id: string
@@ -18,7 +19,7 @@ export const Dialog = (props: DialogsDataType) => {
 	<>
 	  {props.data.map(d => {
 		return (
-		  <div key={d.id} className={styles.dialog}>
+		  <NavLink to={`/messages/message-${d.id.substr(0,8)}`} key={d.id} className={styles.dialog}>
 			<img className={styles.dialog__avatar} alt={'this is my avatar'}
 				 src={'https://cdn4.iconfinder.com/data/icons/must-have-outline/100/objects-29-1024.png'}/>
 			<div className={styles.dialog__info}>
@@ -32,7 +33,7 @@ export const Dialog = (props: DialogsDataType) => {
 				nihil
 				vero.</p>
 			</div>
-		  </div>
+		  </NavLink>
 		)
 	  })}
 	</>

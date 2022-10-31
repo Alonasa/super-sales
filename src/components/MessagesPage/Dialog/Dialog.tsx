@@ -23,15 +23,13 @@ export const Dialog = (props: DialogsDataType) => {
 			<img className={styles.dialog__avatar} alt={'this is my avatar'}
 				 src={'https://cdn4.iconfinder.com/data/icons/must-have-outline/100/objects-29-1024.png'}/>
 			<div className={styles.dialog__info}>
-			<span
-			  className={styles.dialog__title}>{d.firstName} {d.secondName}</span>
-			  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
-				consequuntur debitis dolor, ea eligendi eos, eum harum hic
-				impedit,
-				iure
-				nesciunt quaerat ratione ut veniam voluptatem! Eum laudantium
-				nihil
-				vero.</p>
+			<div className={styles.dialog__header}>
+			  <span className={styles.dialog__title}>{d.firstName} {d.secondName}</span>
+			  <span className={styles.dialog__online_status}>
+				{d.isOnline && ' Online'}
+			  </span>
+			</div>
+			  <p>{d.messages.slice(-1)}</p>
 			</div>
 		  </NavLink>
 		)

@@ -6,18 +6,18 @@ export type MessageType = {
   message: string
 }
 
-type MessagesList = {
+export type MessagesListType = {
   messages: Array<MessageType>
 }
 
-export const Message = (props: MessagesList) => {
+export const Message = (props: MessagesListType) => {
   return (
-	<ul>
-	  {props.messages.map(m => {
-		return (
-		  <li key={m.id}>{m.message}</li>
-		)
-	  })}
-	</ul>
-  );
+    <ul>
+      {props.messages.map(m=> {
+        return (
+          <li>{m.message}</li>
+        )
+      })}
+    </ul>
+  )
 };

@@ -1,7 +1,8 @@
-import React from 'react';
-import {Dialog, DialogsType} from '../Dialog/Dialog';
+import React, {useState} from 'react';
+import {Dialog, DialogType} from '../Dialog/Dialog';
 import {Container} from '@mui/material';
 import {v1} from 'uuid';
+import {Message, MessagesListType, MessageType} from '../Message/Message';
 
 const ID1 = v1();
 const ID2 = v1();
@@ -19,24 +20,21 @@ const data:Array<DataType> = [
 
 const dialogsData = {
   [ID1]: [{
-	  firstName: 'Bob',
-	  secondName: 'Michael',
-	  isOnline: false,
-	  messages: [
-		{
-		  id: v1(),
-		  message: 'Hi'
-		},
-		{
-		  id: v1(),
-		  message: 'What are you doing?',
-		},
-		{
-		  id: v1(),
-		  message: 'Will you join lesson today?'
-		},
-	  ]
-	}],
+	firstName: 'Bob',
+	secondName: 'Michael',
+	isOnline: false,
+	messages: [
+	  {
+		id: v1(),
+		message: 'Hi'
+	  },
+	  {
+		id: v1(),
+		message: 'What are you doing?',
+	  },
+	  {id: v1(), message: 'Will you join lesson today?'},
+	]
+  }],
   [ID2]: [{
 	firstName: 'Anna',
 	secondName: 'Michael',
@@ -67,21 +65,34 @@ const dialogsData = {
 	]
   }],
 }
-
-type MessagesType = {
-  id: (id: string) => void
-}
+let myMess:Array<MessagesListType>
 
 
 export const Messages = () => {
+  let [messages, setMessages] = useState<Array<MessageType>>()
+  let [messagesList, setMessagesList] = useState<boolean>(false)
   
   return (
 	<Container style={{padding: '0 5vw'}}>
 	  {data.map(d => {
-	    let dialog = dialogsData[d.id]
-		let shortenId = d.id.substr(0,8)
-	    
-		return <Dialog data={dialog} id={shortenId}/>
+	 
+		let dialog: Array<DialogType> = dialogsData[d.id]
+		
+		const messagesData = (id: string) => {
+		  if (d.id === id) {
+			myMess = dialogsData[id].map(d => d.messages)
+			setMessagesList(true)
+			//setMessages(data)
+		  }
+		}
+		
+		return (
+		  <>
+			<Dialog data={dialog} id={d.id} messagesList={messagesData}
+					messagesState={messagesList} messages={messages}/>
+			<Message messages={myMess}/>
+		  </>
+		)
 	  })}
 	</Container>
   );

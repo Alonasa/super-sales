@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
-import {Dialog, DialogType} from '../Dialog/Dialog';
+import {Dialog} from '../Dialog/Dialog';
 import {Container} from '@mui/material';
 import {v1} from 'uuid';
-import {Message, MessagesListType, MessageType} from '../Message/Message';
 
 const ID1 = v1();
 const ID2 = v1();
@@ -12,7 +11,13 @@ const ID3 = v1();
 type DataType = {
   id: string
 }
-const data:Array<DataType> = [
+
+export type MessageType = {
+  id: string
+  message: string
+}
+
+const data: Array<DataType> = [
   {id: ID1},
   {id: ID2},
   {id: ID3}
@@ -65,8 +70,6 @@ const dialogsData = {
 	]
   }],
 }
-let myMess:Array<MessagesListType>
-
 
 export const Messages = () => {
   let [messages, setMessages] = useState<Array<MessageType>>()
@@ -75,22 +78,11 @@ export const Messages = () => {
   return (
 	<Container style={{padding: '0 5vw'}}>
 	  {data.map(d => {
+		let data = dialogsData[d.id]
 	 
-		let dialog: Array<DialogType> = dialogsData[d.id]
-		
-		const messagesData = (id: string) => {
-		  if (d.id === id) {
-			myMess = dialogsData[id].map(d => d.messages)
-			setMessagesList(true)
-			//setMessages(data)
-		  }
-		}
-		
 		return (
 		  <>
-			<Dialog data={dialog} id={d.id} messagesList={messagesData}
-					messagesState={messagesList} messages={messages}/>
-			<Message messages={myMess}/>
+			<Dialog data={data} id={d.id}/>
 		  </>
 		)
 	  })}

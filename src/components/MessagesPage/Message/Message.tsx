@@ -1,10 +1,5 @@
 import React from 'react';
-
-
-export type MessageType = {
-  id: string
-  message: string
-}
+import { MessageType } from '../Messages/Messages';
 
 export type MessagesListType = {
   messages: Array<MessageType>

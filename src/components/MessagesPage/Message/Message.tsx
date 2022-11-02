@@ -1,5 +1,6 @@
 import React from 'react';
 import { MessageType } from '../Messages/Messages';
+import s from './Message.module.css';
 
 export type MessagesListType = {
   messages: Array<MessageType>
@@ -7,10 +8,10 @@ export type MessagesListType = {
 
 export const Message = (props: MessagesListType) => {
   return (
-    <ul>
+    <ul className={s.messages__list}>
       {props.messages.map(m=> {
         return (
-          <li>{m.message}</li>
+          <li key={m.id}>{m.message}</li>
         )
       })}
     </ul>

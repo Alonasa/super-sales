@@ -33,13 +33,12 @@
     text-align: left;
 }
 
-.profile__content {
+.profile__content:only-child {
     margin: 20px;
-    display: flex;
 }
 
 .profile__navigation_buttons {
-
+    text-align: left;
 }
 
 .profile__navigation_button {
@@ -52,5 +51,9 @@
 }
 
 .profile__data {
+    background-color: #6b47602b;
+}
 
+.profile__data_content {
+    padding: 30px 20px;
 }

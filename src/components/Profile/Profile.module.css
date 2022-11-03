@@ -34,10 +34,20 @@
 }
 
 .profile__content {
-
+    margin: 20px;
+    display: flex;
 }
 
 .profile__navigation_buttons {
+
+}
+
+.profile__navigation_button {
+    text-decoration: none;
+    color: inherit;
+}
+
+.profile__navigation_active {
 
 }
 

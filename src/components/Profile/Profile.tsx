@@ -1,10 +1,20 @@
-import React from 'react';
+import React, {MouseEvent, useState} from 'react';
 import s from './Profile.module.css'
-import {Button, Container} from '@mui/material';
+import {
+  Button,
+  Container,
+  ToggleButton,
+  ToggleButtonGroup
+} from '@mui/material';
 import {FavoriteBorder} from '@mui/icons-material';
-import {HashLink} from 'react-router-hash-link';
 
 export const Profile = () => {
+  const [selected, setSelected] = useState('all-ads');
+  
+  const handleChange = (event: MouseEvent<HTMLElement>, selectedButton: string) => {
+	setSelected(selectedButton);
+  };
+  
   return (
 	<>
 	  <Container>
@@ -28,11 +38,19 @@ export const Profile = () => {
 	  </Container>
 	  <div className={s.profile__content}>
 		<Container>
-		  <div className={s.profile__navigation_buttons}>
-			<HashLink to="/profile#all-ads">All Ads</HashLink>
-			<HashLink to="/profile#about">About Us</HashLink>
-			<HashLink to="/profile#contact">Contact Info</HashLink>
-		  </div>
+		  <ToggleButtonGroup color={'secondary'} value={selected}
+							 onChange={handleChange} exclusive
+							 className={s.profile__navigation_buttons}>
+			<ToggleButton value="all-ads" href="/profile#all-ads"
+						  className={s.profile__navigation_button}>All
+			  Ads</ToggleButton>
+			<ToggleButton value="about" href="/profile#about"
+						  className={s.profile__navigation_button}>About
+			  Us</ToggleButton>
+			<ToggleButton value="contact" href="/profile#contact"
+						  className={s.profile__navigation_button}>Contact
+			  Info</ToggleButton>
+		  </ToggleButtonGroup>
 		</Container>
 		<div className={s.profile__data}>
 		  <Container className={s.profile__data_content}>

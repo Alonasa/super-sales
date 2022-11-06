@@ -38,22 +38,29 @@
 }
 
 .profile__navigation_buttons {
+    width: 100%;
     text-align: left;
 }
 
-.profile__navigation_button {
-    text-decoration: none;
-    color: inherit;
+.profile__navigation_buttons a {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
 }
 
-.profile__navigation_active {
+.profile__navigation_buttons > .profile__navigation_button {
+    color: purple;
+    background-color: rgba(0, 0, 0, 0);
+}
 
+.profile__navigation_buttons a:active {
+    color: purple;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .profile__data {
-    background-color: #6b47602b;
+    background-color: rgba(213, 110, 163, 0.08);
 }
 
 .profile__data_content {
-    padding: 30px 20px;
+    padding: 40px 20px;
 }

@@ -24,10 +24,8 @@ export type DialogsType = {
 export const Dialog = (props: DialogsDataType) => {
   return (
     <>
-    
       {
         props.data.map(d => {
-        
           const messagesHandler = (id: string) => {
             return
           }

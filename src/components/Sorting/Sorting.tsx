@@ -3,8 +3,13 @@ import {ToggleButton, ToggleButtonGroup} from '@mui/material';
 import ViewListIcon from '@mui/icons-material/ViewList';
 import ViewModuleIcon from '@mui/icons-material/ViewModule';
 
+type SortingType = {
+  onClick: () => void
+}
 
-export const Sorting = () => {
+export const Sorting = (props: SortingType) => {
+  const {onClick} = props
+  
   const [view, setView] = React.useState('list');
   
   const handleChange = (event: React.MouseEvent<HTMLElement>, nextView: string) => {
@@ -17,11 +22,12 @@ export const Sorting = () => {
 	  value={view}
 	  exclusive
 	  onChange={handleChange}
+	  sx={{margin: '20px'}}
 	>
-	  <ToggleButton value="list" aria-label="list">
+	  <ToggleButton value="list" aria-label="list" onClick={onClick}>
 		<ViewListIcon/>
 	  </ToggleButton>
-	  <ToggleButton value="module" aria-label="module">
+	  <ToggleButton value="module" aria-label="module" onClick={onClick}>
 		<ViewModuleIcon/>
 	  </ToggleButton>
 	</ToggleButtonGroup>

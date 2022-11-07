@@ -62,5 +62,17 @@
 }
 
 .profile__data_content {
-    padding: 40px 20px;
+    padding: 20px;
+}
+
+.profile__mode {
+    display: flex;
+}
+
+.profile__mode_list {
+    flex-direction: column;
+}
+
+.profile__mode_row {
+    flex-direction: row;
 }

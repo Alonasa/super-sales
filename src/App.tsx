@@ -9,8 +9,14 @@ import {Route, Routes} from 'react-router-dom';
 import {PostAdd} from './components/PostAdd/PostAdd';
 import {Profile} from './components/Profile/Profile';
 import {MyAccount} from './components/MyAccount/MyAccount';
-import {Messages} from './components/MessagesPage/Messages/Messages';
+import {
+  DataType,
+  Messages,
+  MessageType
+} from './components/MessagesPage/Messages/Messages';
 import {Favorites} from './components/Favorites/Favorites';
+import {v1} from 'uuid';
+import {DialogsType} from './components/MessagesPage/Dialog/Dialog';
 
 const items = [
   {
@@ -57,6 +63,75 @@ const items = [
   },
 ]
 
+
+const ID1 = v1();
+const ID2 = v1();
+const ID3 = v1();
+
+const data: Array<DataType> = [
+  {id: ID1},
+  {id: ID2},
+  {id: ID3}
+]
+
+const messages:MessageType[][] = [
+  [
+    {
+      id: v1(),
+      message: 'Hi'
+    },
+    {
+      id: v1(),
+      message: 'What are you doing?',
+    },
+    {id: v1(), message: 'Will you join lesson today?'},
+  ],
+  [
+    {
+      id: v1(),
+      message: 'Hi'
+    },
+    {
+      id: v1(),
+      message: 'What are you doing?',
+    },
+    {id: v1(), message: 'Will you join lesson today?'},
+  ],
+  [
+    {
+      id: v1(),
+      message: 'Hi'
+    },
+    {
+      id: v1(),
+      message: 'What are you doing?',
+    },
+    {id: v1(), message: 'Will you join lesson today?'},
+  ],
+]
+
+const dialogsData: DialogsType = {
+  [ID1]: [{
+    firstName: 'Bob',
+    secondName: 'Michael',
+    isOnline: false,
+    messages: messages[0]
+  }],
+  [ID2]: [{
+    firstName: 'Anna',
+    secondName: 'Michael',
+    isOnline: true,
+    messages: messages[1]
+  }],
+  [ID3]: [{
+    firstName: 'Kate',
+    secondName: 'Michael',
+    isOnline: false,
+    messages: messages[2]
+  }],
+}
+
+
 function App() {
   return (
     <div className="App">
@@ -67,7 +142,7 @@ function App() {
           <Route path="/post-add" element={<PostAdd/>}/>
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/my-account" element={<MyAccount/>}/>
-          <Route path="/messages" element={<Messages/>}/>
+          <Route path="/messages" element={<Messages data={data} dialogsData={dialogsData}/>}/>
           <Route path="/favorites" element={<Favorites items={items}/>}/>
         </Routes>
         <Footer/>

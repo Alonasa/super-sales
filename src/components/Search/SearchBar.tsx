@@ -1,10 +1,10 @@
 import React from 'react';
 import SearchIcon from '@mui/icons-material/Search';
-import {alpha, styled} from '@mui/material/styles';
-import InputBase from '@mui/material/InputBase';
+import {styled} from '@mui/material/styles';
 import {AddLocation} from '@mui/icons-material';
 import {Button, Container} from '@mui/material';
 import {purple} from '@mui/material/colors';
+import {StyledInputBase} from './StyledInputBase';
 
 const color = purple[50];
 
@@ -44,19 +44,6 @@ const SearchIconWrapper = styled('div')(({theme}) => ({
   justifyContent: 'space-between',
 }));
 
-const StyledInputBase = styled(InputBase)(({theme}) => ({
-  color: 'inherit',
-  backgroundColor: alpha(theme.palette.common.white, 1),
-  '& .MuiInputBase-input': {
-	padding: theme.spacing(1, 1, 1, 0),
-	paddingLeft: '1em',
-	transition: theme.transitions.create('width'),
-	width: '100%',
-	[theme.breakpoints.up('md')]: {
-	  width: '20ch',
-	},
-  },
-}));
 
 export const SearchBar = () => {
   return (

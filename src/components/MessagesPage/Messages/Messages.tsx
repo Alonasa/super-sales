@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Dialog} from '../Dialog/Dialog';
 import {Container} from '@mui/material';
 import {v1} from 'uuid';
@@ -72,9 +72,6 @@ const dialogsData = {
 }
 
 export const Messages = () => {
-  let [messages, setMessages] = useState<Array<MessageType>>()
-  let [messagesList, setMessagesList] = useState<boolean>(false)
-  
   return (
 	<Container style={{padding: '0 5vw'}}>
 	  {data.map(d => {

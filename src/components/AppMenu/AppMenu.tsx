@@ -12,6 +12,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import AddIcon from '@mui/icons-material/Add';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import {Favorite} from '@mui/icons-material';
 import {Button, Container} from '@mui/material';
@@ -98,27 +99,48 @@ export const AppMenu = () => {
           <p>Messages</p>
         </MenuItem>
       </NavLink>
-      <MenuItem>
-        <IconButton size="large" aria-label="show products from wishlist"
-                    color="inherit">
-          <Badge badgeContent={10} color="secondary">
-            <Favorite/>
-          </Badge>
-        </IconButton>
-        <p>Wishlist</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="secondary">
-            <NotificationsIcon/>
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
+      <NavLink to="/favorites"
+               className={(data) => styleHandler(data.isActive)}>
+        <MenuItem>
+          <IconButton size="large" aria-label="show products from wishlist"
+                      color="inherit">
+            <Badge badgeContent={10} color="secondary">
+              <Favorite/>
+            </Badge>
+          </IconButton>
+          <p>Wishlist</p>
+        </MenuItem>
+      </NavLink>
+      <NavLink to="/notifications"
+               className={(data) => styleHandler(data.isActive)}>
+        <MenuItem>
+          <IconButton
+            size="large"
+            aria-label="show 17 new notifications"
+            color="inherit"
+          >
+            <Badge badgeContent={17} color="secondary">
+              <NotificationsIcon/>
+            </Badge>
+          </IconButton>
+          <p>Notifications</p>
+        </MenuItem>
+      </NavLink>
+      <NavLink to="/post-add"
+               className={(data) => styleHandler(data.isActive)}>
+        <MenuItem>
+          <IconButton
+            size="large"
+            aria-label="post new add"
+            color="inherit"
+          >
+            <Badge color="secondary">
+              <AddIcon/>
+            </Badge>
+          </IconButton>
+          <p>Post Add</p>
+        </MenuItem>
+      </NavLink>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           size="large"

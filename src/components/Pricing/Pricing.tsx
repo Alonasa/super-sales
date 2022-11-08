@@ -10,7 +10,7 @@ type PriceItemType = {
   features: Array<string>
 }
 
-type PricingType = {
+export type PricingType = {
   data: Array<PriceItemType>
 }
 

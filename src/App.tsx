@@ -63,7 +63,6 @@ const items = [
   },
 ]
 
-
 const ID1 = v1();
 const ID2 = v1();
 const ID3 = v1();
@@ -132,6 +131,28 @@ const dialogsData: DialogsType = {
 }
 
 
+const prices = [
+  {header: 'Free',
+    price: 'Free',
+    features: ['Duration 10 days', 'Image gallery', 'Location',
+      'Tags, keywords',
+      'Phone number',]
+  },
+  {header: 'Basic',
+    price: '5$',
+    features: ['Duration 30 days', 'Image gallery', 'Location',
+      'Tags, keywords',
+      'Phone number', 'Top Listing', 'Home page 7 days']
+  },
+  {header: 'Premium',
+    price: '10$',
+    features: ['Duration 30 days', 'Image gallery', 'Location',
+      'Tags, keywords',
+      'Phone number', 'Top Listing', 'Home page 14 days', 'Multiple contacts', 'Messengers', 'Video']
+  }
+]
+
+
 function App() {
   return (
     <div className="App">
@@ -139,7 +160,7 @@ function App() {
         <Head/>
         <Routes>
           <Route path="/" element={<Body items={items}/>}/>
-          <Route path="/post-add" element={<PostAdd/>}/>
+          <Route path="/post-add" element={<PostAdd data={prices}/>}/>
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/my-account" element={<MyAccount/>}/>
           <Route path="/messages" element={<Messages data={data} dialogsData={dialogsData}/>}/>

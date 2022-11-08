@@ -23,51 +23,60 @@ const data: Array<DataType> = [
   {id: ID3}
 ]
 
+const messages:MessageType[][] = [
+  [
+	{
+	  id: v1(),
+	  message: 'Hi'
+	},
+	{
+	  id: v1(),
+	  message: 'What are you doing?',
+	},
+	{id: v1(), message: 'Will you join lesson today?'},
+  ],
+  [
+	{
+	  id: v1(),
+	  message: 'Hi'
+	},
+	{
+	  id: v1(),
+	  message: 'What are you doing?',
+	},
+	{id: v1(), message: 'Will you join lesson today?'},
+  ],
+  [
+	{
+	  id: v1(),
+	  message: 'Hi'
+	},
+	{
+	  id: v1(),
+	  message: 'What are you doing?',
+	},
+	{id: v1(), message: 'Will you join lesson today?'},
+  ],
+]
+
 const dialogsData = {
   [ID1]: [{
 	firstName: 'Bob',
 	secondName: 'Michael',
 	isOnline: false,
-	messages: [
-	  {
-		id: v1(),
-		message: 'Hi'
-	  },
-	  {
-		id: v1(),
-		message: 'What are you doing?',
-	  },
-	  {id: v1(), message: 'Will you join lesson today?'},
-	]
+	messages: messages[0]
   }],
   [ID2]: [{
 	firstName: 'Anna',
 	secondName: 'Michael',
 	isOnline: true,
-	messages: [
-	  {
-		id: v1(),
-		message: 'Hi'
-	  },
-	  {
-		id: v1(),
-		message: 'What are you doing?',
-	  },
-	  {
-		id: v1(),
-		message: 'Will you join lesson today?'
-	  },
-	]
+	messages: messages[1]
   }],
   [ID3]: [{
 	firstName: 'Kate',
 	secondName: 'Michael',
 	isOnline: false,
-	messages: [
-	  {id: v1(), message: 'Hi'},
-	  {id: v1(), message: 'What are you doing?',},
-	  {id: v1(), message: 'Will you join lesson today???'},
-	]
+	messages: messages[2]
   }],
 }
 

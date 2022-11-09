@@ -4,7 +4,7 @@ import styles from './Pricing.module.css';
 import {Button, Grid} from '@mui/material';
 import {CheckCircleOutlineOutlined} from '@mui/icons-material';
 
-type PriceItemType = {
+export type PriceItemType = {
   header: string
   price: string
   features: Array<string>

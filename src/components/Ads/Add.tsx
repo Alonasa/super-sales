@@ -13,7 +13,7 @@ import {
 import Typography from '@mui/material/Typography';
 import {AddShoppingCart, Favorite, FavoriteBorder} from '@mui/icons-material';
 
-type AddType = {
+export type AddType = {
   id: number
   title: string
   description: string

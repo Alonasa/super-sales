@@ -14,7 +14,7 @@ import Typography from '@mui/material/Typography';
 import {AddShoppingCart, Favorite, FavoriteBorder} from '@mui/icons-material';
 
 export type AddType = {
-  id: number
+  id: string
   title: string
   description: string
   price: number

@@ -16,27 +16,32 @@ import {DialogsType} from './components/MessagesPage/Dialog/Dialog';
 import {PriceItemType} from './components/Pricing/Pricing';
 
 type AppType = {
-  adsData: Array<AddType>
-  data: Array<DataType>
-  dialogsData: DialogsType
-  pricesData: Array<PriceItemType>
+  adds: Array<AddType>
+  dataId: Array<DataType>
+  dialogs: DialogsType
+  prices: Array<PriceItemType>
 }
 
-function App(props: AppType) {
-  const {adsData, data, dialogsData, pricesData} = props
+type AppDataType = {
+  state: AppType
+}
+
+
+function App(props: AppDataType) {
+  const {adds, dataId, dialogs, prices} = props.state
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
         <Head/>
         <Routes>
-          <Route path="/" element={<Body items={adsData}/>}/>
-          <Route path="/post-add" element={<PostAdd data={pricesData}/>}/>
+          <Route path="/" element={<Body items={adds}/>}/>
+          <Route path="/post-add" element={<PostAdd data={prices}/>}/>
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/my-account" element={<MyAccount/>}/>
           <Route path="/messages"
-                 element={<Messages data={data} dialogsData={dialogsData}/>}/>
+                 element={<Messages data={dataId} dialogsData={dialogs}/>}/>
           <Route path="/favorites"
-                 element={<Favorites items={adsData}/>}/>
+                 element={<Favorites items={adds}/>}/>
         </Routes>
         <Footer/>
       </ThemeProvider>

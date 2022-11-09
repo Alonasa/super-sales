@@ -1,12 +1,12 @@
 import {v1} from 'uuid';
-import {MessageType} from '../components/MessagesPage/Messages/Messages';
+import {MessagesListType} from '../components/MessagesPage/Messages/Messages';
 
 const ID1 = v1();
 const ID2 = v1();
 const ID3 = v1();
 
-const messages: MessageType[][] = [
-  [
+const messages:MessagesListType = {
+  [ID1]: [
 	{
 	  id: v1(),
 	  message: 'Hi'
@@ -17,7 +17,7 @@ const messages: MessageType[][] = [
 	},
 	{id: v1(), message: 'Will you join lesson today?'},
   ],
-  [
+  [ID2]: [
 	{
 	  id: v1(),
 	  message: 'Hi'
@@ -28,7 +28,7 @@ const messages: MessageType[][] = [
 	},
 	{id: v1(), message: 'Will you join lesson today?'},
   ],
-  [
+  [ID3]: [
 	{
 	  id: v1(),
 	  message: 'Hi'
@@ -39,16 +39,17 @@ const messages: MessageType[][] = [
 	},
 	{id: v1(), message: 'Will you join lesson today?'},
   ],
-]
+}
 
 export const state = {
-  adds: [{
-	id: v1(),
-	title: '1',
-	description: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
-	price: 20,
-	isFavorite: true
-  },
+  adds: [
+	{
+	  id: v1(),
+	  title: '1',
+	  description: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
+	  price: 20,
+	  isFavorite: true
+	},
 	{
 	  id: v1(),
 	  title: '2',
@@ -97,19 +98,19 @@ export const state = {
 	  firstName: 'Bob',
 	  secondName: 'Michael',
 	  isOnline: false,
-	  messages: messages[0]
+	  messages: messages[ID1]
 	}],
 	[ID2]: [{
 	  firstName: 'Anna',
 	  secondName: 'Michael',
 	  isOnline: true,
-	  messages: messages[1]
+	  messages: messages[ID2]
 	}],
 	[ID3]: [{
 	  firstName: 'Kate',
 	  secondName: 'Michael',
 	  isOnline: false,
-	  messages: messages[2]
+	  messages: messages[ID3]
 	}],
   },
   

@@ -11,6 +11,10 @@ export type MessageType = {
   message: string
 }
 
+export type MessagesListType = {
+  [key: string]: Array<MessageType>
+}
+
 export type MessagesType = {
   data: Array<DataType>
   dialogsData: DialogsType

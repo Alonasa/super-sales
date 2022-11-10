@@ -1,11 +1,6 @@
 import React from 'react';
-import { MessagesListType } from '../Messages/Messages';
+import {MessagesListType} from '../Messages/Messages';
 import s from './Message.module.css';
-
-export type MessagesType = {
-  messages: Array<MessagesListType>
-}
-
 
 export const Message = (props: MessagesListType) => {
   return (

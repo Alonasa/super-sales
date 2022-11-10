@@ -1,6 +1,7 @@
 import React from 'react';
 import {Dialog, DialogsType} from '../Dialog/Dialog';
 import {Container} from '@mui/material';
+import {UsersList} from '../UsersList/UsersList';
 
 export type DataType = {
   id: string
@@ -25,11 +26,12 @@ export const Messages = (props: MessagesType) => {
   return (
 	<Container style={{padding: '0 5vw'}}>
 	  {data.map(d => {
-		let data = dialogsData[d.id]
+		let userData = dialogsData[d.id]
 		
 		return (
 		  <>
-			<Dialog data={data} id={d.id}/>
+            <UsersList userData={userData}/>
+			<Dialog data={userData} id={d.id}/>
 		  </>
 		)
 	  })}

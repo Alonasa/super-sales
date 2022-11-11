@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from './Dialog.module.css';
 import {Messages, MessageType} from '../Message/Messages';
 import {NavLink} from 'react-router-dom';
@@ -21,8 +21,15 @@ export type DialogsType = {
 
 export const Dialog = (props: DialogsDataType) => {
   let {data, id} = props
+
+  const [messenger, setMessenger] = useState(true)
+  
+  const messengerHandler = ()=> {
+    setMessenger(true)
+  }
+  
   return (
-	<NavLink to={id.substr(0, 8)} key={id} className={s.dialog}>
+	<NavLink to={id.substr(0, 8)} key={id} className={s.dialog} onClick={messengerHandler}>
 	  {data.map(d => {
 	  
 		return (
@@ -46,7 +53,7 @@ export const Dialog = (props: DialogsDataType) => {
 		)
 	  })}
       
-        <Messages data={data}/>
+        <Messages data={data} isMessengerOpen={messenger}/>
 	</NavLink>
   );
 };

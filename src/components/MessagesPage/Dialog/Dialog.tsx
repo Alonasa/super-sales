@@ -22,15 +22,11 @@ export type DialogsType = {
 export const Dialog = (props: DialogsDataType) => {
   let {data, id} = props
   return (
-	<div className={s.dialog__wrapper}>
+	<NavLink to={id.substr(0, 8)} key={id} className={s.dialog}>
 	  {data.map(d => {
-		const messagesHandler = (id: string) => {
-		  return
-		}
+	  
 		return (
-		  <NavLink to={id.substr(0, 8)} key={id}
-				   onClick={() => messagesHandler(id)}
-				   className={s.dialog}>
+		  <div className={s.dialog__wrapper}>
 			<>
 			  <img className={s.dialog__avatar}
 				   alt={'this is my avatar'}
@@ -46,11 +42,11 @@ export const Dialog = (props: DialogsDataType) => {
 				</div>
 			  </div>
 			</>
-		  </NavLink>
+		  </div>
 		)
 	  })}
       
         <Message data={data}/>
-	</div>
+	</NavLink>
   );
 };

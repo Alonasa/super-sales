@@ -1,4 +1,11 @@
 .messages__list {
     padding: 0;
+    display: none;
     list-style: none;
+}
+
+@media (min-width: 500px) {
+    .messages__list {
+        display: block;
+    }
 }

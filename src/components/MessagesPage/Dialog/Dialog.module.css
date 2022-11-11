@@ -1,18 +1,17 @@
 .dialog {
-    padding: 20px;
-    margin-right: 2vw;
-    width: 30%;
     display: flex;
     align-items: center;
-    text-align: left;
     text-decoration: none;
     color: inherit;
+    border-bottom: 2px solid #6b4760;
 }
 
 .dialog__wrapper {
+    padding: 20px;
+    margin-right: 2vw;
     display: flex;
     align-items: center;
-    border-bottom: 2px solid #6b4760;
+    text-align: left;
 }
 
 .dialog__header {
@@ -25,7 +24,7 @@
 
 .dialog__online_status {
     position: absolute;
-    top: -30px;
+    top: -25px;
     left: 0;
     font-weight: bold;
     color: #5DCB5DFF;
@@ -48,5 +47,13 @@
 }
 
 .dialog__title {
+    width: 100%;
     font-weight: bold;
+}
+
+@media (min-width: 500px) {
+    .dialog__wrapper {
+        width: 20vw;
+    }
+
 }

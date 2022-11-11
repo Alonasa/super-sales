@@ -1,7 +1,6 @@
 import React from 'react';
 import {Dialog, DialogsType} from '../Dialog/Dialog';
 import {Container} from '@mui/material';
-import {Message} from '../Message/Message';
 
 export type DataType = {
   id: string

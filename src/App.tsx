@@ -9,7 +9,7 @@ import {Route, Routes} from 'react-router-dom';
 import {PostAdd} from './components/PostAdd/PostAdd';
 import {Profile} from './components/Profile/Profile';
 import {MyAccount} from './components/MyAccount/MyAccount';
-import {DataType, Messages} from './components/MessagesPage/Messages/Messages';
+import {DataType, Dialogs} from './components/MessagesPage/Dialogs/Dialogs';
 import {Favorites} from './components/Favorites/Favorites';
 import {AddType} from './components/Ads/Add';
 import {DialogsType} from './components/MessagesPage/Dialog/Dialog';
@@ -39,7 +39,7 @@ function App(props: AppDataType) {
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/my-account" element={<MyAccount/>}/>
           <Route path="/messages"
-                 element={<Messages data={dataId} dialogsData={dialogs}/>}/>
+                 element={<Dialogs data={dataId} dialogsData={dialogs}/>}/>
           <Route path="/favorites"
                  element={<Favorites items={adds}/>}/>
         </Routes>

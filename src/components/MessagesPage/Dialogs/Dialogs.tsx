@@ -1,27 +1,18 @@
 import React from 'react';
 import {Dialog, DialogsType} from '../Dialog/Dialog';
 import {Container} from '@mui/material';
-import {UsersList} from '../UsersList/UsersList';
+import {Message} from '../Message/Message';
 
 export type DataType = {
   id: string
 }
 
-export type MessageType = {
-  id: string
-  message: string
-}
-
-export type MessagesListType = {
-  [key: string]: Array<MessageType>
-}
-
-export type MessagesType = {
+export type DialogsDatatype = {
   data: Array<DataType>
   dialogsData: DialogsType
 }
 
-export const Messages = (props: MessagesType) => {
+export const Dialogs = (props: DialogsDatatype) => {
   const {data, dialogsData} = props
   return (
 	<Container style={{padding: '0 5vw'}}>
@@ -30,7 +21,6 @@ export const Messages = (props: MessagesType) => {
 		
 		return (
 		  <>
-            <UsersList userData={userData}/>
 			<Dialog data={userData} id={d.id}/>
 		  </>
 		)

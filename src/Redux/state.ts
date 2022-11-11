@@ -1,5 +1,5 @@
 import {v1} from 'uuid';
-import {MessagesListType} from '../components/MessagesPage/Messages/Messages';
+import {MessagesListType} from '../components/MessagesPage/Message/Message';
 
 const ID1 = v1();
 const ID2 = v1();
@@ -37,7 +37,7 @@ const messages:MessagesListType = {
 	  id: v1(),
 	  message: 'What are you doing?',
 	},
-	{id: v1(), message: 'Will you join lesson today?'},
+	{id: v1(), message: 'Will you join lesson today? I need to check'},
   ],
 }
 

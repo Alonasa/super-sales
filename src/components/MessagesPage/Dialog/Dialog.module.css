@@ -1,5 +1,7 @@
 .dialog {
     padding: 20px;
+    margin-right: 2vw;
+    width: 30%;
     display: flex;
     align-items: center;
     text-align: left;
@@ -7,11 +9,24 @@
     color: inherit;
 }
 
+.dialog__wrapper {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #6b4760;
+}
+
+.dialog__header {
+    position: relative;
+}
+
 .dialog .dialog__header:hover > :not(.dialog__online_status) {
     color: #d56ea3;
 }
 
 .dialog__online_status {
+    position: absolute;
+    top: -30px;
+    left: 0;
     font-weight: bold;
     color: #5DCB5DFF;
     animation: blink 3000ms infinite;

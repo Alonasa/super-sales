@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Dialog.module.css';
+import s from './Dialog.module.css';
 import {Message, MessageType} from '../Message/Message';
 import {NavLink} from 'react-router-dom';
 
@@ -22,7 +22,7 @@ export type DialogsType = {
 export const Dialog = (props: DialogsDataType) => {
   let {data, id} = props
   return (
-	<div>
+	<div className={s.dialog__wrapper}>
 	  {data.map(d => {
 		const messagesHandler = (id: string) => {
 		  return
@@ -30,18 +30,18 @@ export const Dialog = (props: DialogsDataType) => {
 		return (
 		  <NavLink to={id.substr(0, 8)} key={id}
 				   onClick={() => messagesHandler(id)}
-				   className={styles.dialog}>
+				   className={s.dialog}>
 			<>
-			  <img className={styles.dialog__avatar}
+			  <img className={s.dialog__avatar}
 				   alt={'this is my avatar'}
 				   src={'https://cdn4.iconfinder.com/data/icons/must-have-outline/100/objects-29-1024.png'}/>
-			  <div className={styles.dialog__info}>
-				<div className={styles.dialog__header}>
+			  <div className={s.dialog__info}>
+				<div className={s.dialog__header}>
 				  <span
-					className={styles.dialog__title}>{d.firstName} {d.secondName}
+					className={s.dialog__title}>{d.firstName} {d.secondName}
 				  </span>
-				  <span className={styles.dialog__online_status}>
-				{d.isOnline && ' Online'}
+				  <span className={s.dialog__online_status}>
+				    {d.isOnline && ' Online'}
 				  </span>
 				</div>
 			  </div>

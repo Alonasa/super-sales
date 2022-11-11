@@ -16,13 +16,15 @@ type MessagesType = {
 }
 
 export const Message = (props: MessagesType) => {
-  console.log(props)
   let {data} = props
+  
   return (
     <ul className={s.messages__list}>
-      {data.map(m => m.messages.map(i => {return(
-        <li key={i.id}>{i.message}</li>
-      )}))}
+      {data.map(d => {
+        return(
+          <li key={d.messages[d.messages.length-1].id}>{d.messages[d.messages.length - 1].message}</li>
+        )
+      })}
     </ul>
   )
 };

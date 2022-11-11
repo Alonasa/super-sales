@@ -15,7 +15,7 @@ type MessagesType = {
   data: Array<DialogType>
 }
 
-export const Message = (props: MessagesType) => {
+export const Messages = (props: MessagesType) => {
   let {data} = props
   
   return (

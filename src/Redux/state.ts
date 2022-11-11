@@ -1,5 +1,5 @@
 import {v1} from 'uuid';
-import {MessagesListType} from '../components/MessagesPage/Message/Message';
+import {MessagesListType} from '../components/MessagesPage/Message/Messages';
 
 const ID1 = v1();
 const ID2 = v1();

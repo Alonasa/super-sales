@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './Dialog.module.css';
-import {Message, MessageType} from '../Message/Message';
+import {Messages, MessageType} from '../Message/Messages';
 import {NavLink} from 'react-router-dom';
 
 export type DialogType = {
@@ -46,7 +46,7 @@ export const Dialog = (props: DialogsDataType) => {
 		)
 	  })}
       
-        <Message data={data}/>
+        <Messages data={data}/>
 	</NavLink>
   );
 };

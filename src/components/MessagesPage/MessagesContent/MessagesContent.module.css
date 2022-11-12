@@ -1,0 +1,17 @@
+.messagesContent {
+    margin: 3% 0 3% auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.messagesContent__textarea {
+    width: 100%;
+}
+
+@media (min-width: 500px) {
+    .messagesContent {
+        width: 72%;
+    }
+}

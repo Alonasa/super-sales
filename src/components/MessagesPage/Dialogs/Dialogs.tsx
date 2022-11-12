@@ -1,6 +1,7 @@
 import React from 'react';
 import {Dialog, DialogsType} from '../Dialog/Dialog';
 import {Container} from '@mui/material';
+import {MessagesContent} from '../MessagesContent/MessagesContent';
 
 export type DataType = {
   id: string
@@ -24,6 +25,7 @@ export const Dialogs = (props: DialogsDatatype) => {
 		  </>
 		)
 	  })}
+	  <MessagesContent/>
 	</Container>
   );
 };

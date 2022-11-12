@@ -152,7 +152,7 @@ export const addMessage = (newMessage: string) => {
 	id: v1(),
 	message: newMessage
   }
-  if (message) {
+  if (newMessage) {
 	state.dialogs[ID3].map(v => v.messages.push(message))
 	rerenderEntireTree(state)
   }

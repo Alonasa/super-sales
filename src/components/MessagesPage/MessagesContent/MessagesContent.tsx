@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, KeyboardEvent} from 'react';
 import {Button, TextareaAutosize} from '@mui/material';
 import s from './MessagesContent.module.css';
 import {Send} from '@mui/icons-material';
@@ -17,9 +17,13 @@ export const MessagesContent = (props: contentType) => {
   
   const sendMessageHandler = () => {
 	if(newMessage) {
-	  props.addNewMessage(newMessage)
+	  props.addNewMessage(newMessage.trim())
 	  setMessage('')
 	}
+  }
+  
+  const onKeyPressHandler = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+    e.key === 'Enter' && sendMessageHandler()
   }
   
   return (
@@ -29,8 +33,9 @@ export const MessagesContent = (props: contentType) => {
 		onChange={(e) => saveMessageHandler(e.currentTarget.value)}
 		minRows={4}
 		className={s.messagesContent__textarea}
+		onKeyPress={(e)=>onKeyPressHandler(e)}
 	  />
-	  <Button onClick={sendMessageHandler}>
+	  <Button onClick={sendMessageHandler} >
 		Send
 		<Send/>
 	  </Button>

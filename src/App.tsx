@@ -14,7 +14,6 @@ import {Favorites} from './components/Favorites/Favorites';
 import {AddType} from './components/Ads/Add';
 import {DialogsType} from './components/MessagesPage/Dialog/Dialog';
 import {PriceItemType} from './components/Pricing/Pricing';
-import {addMessage} from './Redux/state';
 
 export type AppType = {
   adds: Array<AddType>

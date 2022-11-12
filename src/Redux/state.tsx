@@ -4,7 +4,9 @@ import {
   MessageType
 } from '../components/MessagesPage/Message/Messages';
 import {AppType} from '../App';
-import { rerenderEntireTree } from '../render';
+
+let rerenderEntireTree = (state: AppType) => {
+}
 
 const ID1 = v1();
 const ID2 = v1();
@@ -156,4 +158,9 @@ export const addMessage = (newMessage: string) => {
 	state.dialogs[ID3].map(v => v.messages.push(message))
 	rerenderEntireTree(state)
   }
+}
+
+export const subscribe = (observer: (state: AppType) => void) => {
+  rerenderEntireTree = observer
+  console.log(observer)
 }

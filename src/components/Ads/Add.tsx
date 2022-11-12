@@ -34,10 +34,11 @@ const Item = styled(Paper)(({theme}) => ({
 }));
 
 export const Add = (props: AddsType) => {
+  let {items} = props;
   return (
 	<Box sx={{flexGrow: 1}}>
 	  <Grid container spacing={2}>
-		{props.items.map(p => {
+		{items.map(p => {
 		  return (
 			<Grid key={p.id} xs={12} sm={6} md={4}>
 			  <Item>

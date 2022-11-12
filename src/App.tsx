@@ -14,8 +14,9 @@ import {Favorites} from './components/Favorites/Favorites';
 import {AddType} from './components/Ads/Add';
 import {DialogsType} from './components/MessagesPage/Dialog/Dialog';
 import {PriceItemType} from './components/Pricing/Pricing';
+import {addMessage} from './Redux/state';
 
-type AppType = {
+export type AppType = {
   adds: Array<AddType>
   dataId: Array<DataType>
   dialogs: DialogsType
@@ -24,11 +25,14 @@ type AppType = {
 
 type AppDataType = {
   state: AppType
+  addMessage: (newMessage: string) => void
 }
 
-
 function App(props: AppDataType) {
-  const {adds, dataId, dialogs, prices} = props.state
+  const  {addMessage} = props;
+  const {adds, dataId, dialogs, prices} = props.state;
+  
+  
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
@@ -39,7 +43,7 @@ function App(props: AppDataType) {
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/my-account" element={<MyAccount/>}/>
           <Route path="/messages"
-                 element={<Dialogs data={dataId} dialogsData={dialogs}/>}/>
+                 element={<Dialogs data={dataId} dialogsData={dialogs} addNewMessage={addMessage}/>}/>
           <Route path="/favorites"
                  element={<Favorites items={adds}/>}/>
         </Routes>

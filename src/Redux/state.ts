@@ -1,11 +1,16 @@
 import {v1} from 'uuid';
-import {MessagesListType} from '../components/MessagesPage/Message/Messages';
+import {
+  MessagesListType,
+  MessageType
+} from '../components/MessagesPage/Message/Messages';
+import {AppType} from '../App';
+import { rerenderEntireTree } from '../render';
 
 const ID1 = v1();
 const ID2 = v1();
 const ID3 = v1();
 
-const messages:MessagesListType = {
+const messages: MessagesListType = {
   [ID1]: [
 	{
 	  id: v1(),
@@ -41,7 +46,7 @@ const messages:MessagesListType = {
   ],
 }
 
-export const state = {
+export const state: AppType = {
   adds: [
 	{
 	  id: v1(),
@@ -136,5 +141,17 @@ export const state = {
 		'Tags, keywords',
 		'Phone number', 'Top Listing', 'Home page 14 days', 'Multiple contacts', 'Messengers', 'Video']
 	}
-  ]
+  ],
+}
+
+export const addMessage = (newMessage: string) => {
+  let message: MessageType = {
+	id: v1(),
+	message: newMessage
+  }
+  if (message) {
+	state.dialogs[ID3].map(v => v.messages.push(message))
+	rerenderEntireTree(state)
+  }
+  console.log(messages)
 }

@@ -10,10 +10,11 @@ export type DataType = {
 export type DialogsDatatype = {
   data: Array<DataType>
   dialogsData: DialogsType
+  addNewMessage: (value: string) => void
 }
 
 export const Dialogs = (props: DialogsDatatype) => {
-  const {data, dialogsData} = props
+  const {data, dialogsData, addNewMessage} = props
   return (
 	<Container style={{padding: '0 5vw'}}>
 	  {data.map(d => {
@@ -25,7 +26,7 @@ export const Dialogs = (props: DialogsDatatype) => {
 		  </>
 		)
 	  })}
-	  <MessagesContent/>
+	  <MessagesContent addNewMessage={addNewMessage}/>
 	</Container>
   );
 };

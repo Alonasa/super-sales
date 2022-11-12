@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './Message.module.css';
 import {DialogType} from '../Dialog/Dialog';
+import {v1} from 'uuid';
 
 export type MessageType = {
   id: string
@@ -14,10 +15,12 @@ export type MessagesListType = {
 type MessagesType = {
   data: Array<DialogType>
   isMessengerOpen: boolean
+  addNewMessage?: (value: string) => void
 }
 
 export const Messages = (props: MessagesType) => {
-  let {data, isMessengerOpen} = props
+  let {data, isMessengerOpen, addNewMessage} = props
+  
   
   const MessengerOpen = () => {
     return (

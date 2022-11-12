@@ -4,6 +4,7 @@ import {Messages, MessageType} from '../Message/Messages';
 import {NavLink} from 'react-router-dom';
 
 export type DialogType = {
+  id: string
   firstName: string
   secondName: string
   isOnline: boolean
@@ -21,29 +22,30 @@ export type DialogsType = {
 
 export const Dialog = (props: DialogsDataType) => {
   let {data, id} = props
-
+  
   const [messenger, setMessenger] = useState(true)
   
-  const messengerHandler = ()=> {
+  const messengerHandler = () => {
     setMessenger(true)
   }
   
   return (
-	<NavLink to={id.substr(0, 8)} key={id} className={s.dialog} onClick={messengerHandler}>
-	  {data.map(d => {
+    <NavLink to={id.substr(0, 8)} key={id} className={s.dialog}
+             onClick={messengerHandler}>
+      {data.map(d => {
 	  
 		return (
-		  <div className={s.dialog__wrapper}>
-			<>
-			  <img className={s.dialog__avatar}
-				   alt={'this is my avatar'}
-				   src={'https://cdn4.iconfinder.com/data/icons/must-have-outline/100/objects-29-1024.png'}/>
-			  <div className={s.dialog__info}>
-				<div className={s.dialog__header}>
+          <div key={d.id} className={s.dialog__wrapper}>
+            <>
+              <img className={s.dialog__avatar}
+                   alt={'this is my avatar'}
+                   src={'https://cdn4.iconfinder.com/data/icons/must-have-outline/100/objects-29-1024.png'}/>
+              <div className={s.dialog__info}>
+                <div className={s.dialog__header}>
 				  <span
-					className={s.dialog__title}>{d.firstName} {d.secondName}
+                    className={s.dialog__title}>{d.firstName} {d.secondName}
 				  </span>
-				  <span className={s.dialog__online_status}>
+                  <span className={s.dialog__online_status}>
 				    {d.isOnline && ' Online'}
 				  </span>
 				</div>

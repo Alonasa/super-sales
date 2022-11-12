@@ -5,6 +5,7 @@ import {Button, Grid} from '@mui/material';
 import {CheckCircleOutlineOutlined} from '@mui/icons-material';
 
 export type PriceItemType = {
+  id: string
   header: string
   price: string
   features: Array<string>
@@ -20,7 +21,7 @@ export const Pricing = (props: PricingType) => {
     <Grid container style={{justifyContent: 'space-evenly'}}>
       {data.map(d => {
         return (
-          <div className={styles.pricing}>
+          <div key={d.id} className={styles.pricing}>
             <h3 className={styles.pricing__header}>{d.header}</h3>
             <Paper className={styles.pricing__wrapper}>
               <div>
@@ -29,7 +30,7 @@ export const Pricing = (props: PricingType) => {
               </div>
               <div>
                 <ul className={styles.pricing__features}>
-                  {d.features.map(f => <li className={styles.pricing__feature}>
+                  {d.features.map(f => <li key={f} className={styles.pricing__feature}>
                     <CheckCircleOutlineOutlined color="inherit"
                                                 style={{paddingRight: '15px'}}/>{f}
                   </li>)}

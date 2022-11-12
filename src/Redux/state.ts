@@ -100,18 +100,21 @@ export const state: AppType = {
   
   dialogs: {
 	[ID1]: [{
+	  id: v1(),
 	  firstName: 'Bob',
 	  secondName: 'Michael',
 	  isOnline: false,
 	  messages: messages[ID1]
 	}],
 	[ID2]: [{
+	  id: v1(),
 	  firstName: 'Anna',
 	  secondName: 'Michael',
 	  isOnline: true,
 	  messages: messages[ID2]
 	}],
 	[ID3]: [{
+	  id: v1(),
 	  firstName: 'Kate',
 	  secondName: 'Michael',
 	  isOnline: false,
@@ -120,21 +123,21 @@ export const state: AppType = {
   },
   
   prices: [
-	{
+	{ id: v1(),
 	  header: 'Free',
 	  price: 'Free',
 	  features: ['Duration 10 days', 'Image gallery', 'Location',
 		'Tags, keywords',
 		'Phone number',]
 	},
-	{
+	{ id: v1(),
 	  header: 'Basic',
 	  price: '5$',
 	  features: ['Duration 30 days', 'Image gallery', 'Location',
 		'Tags, keywords',
 		'Phone number', 'Top Listing', 'Home page 7 days']
 	},
-	{
+	{ id: v1(),
 	  header: 'Premium',
 	  price: '10$',
 	  features: ['Duration 30 days', 'Image gallery', 'Location',
@@ -153,5 +156,4 @@ export const addMessage = (newMessage: string) => {
 	state.dialogs[ID3].map(v => v.messages.push(message))
 	rerenderEntireTree(state)
   }
-  console.log(messages)
 }

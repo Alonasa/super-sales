@@ -21,9 +21,7 @@ export const Dialogs = (props: DialogsDatatype) => {
 		let userData = dialogsData[d.id]
 		
 		return (
-		  <>
-			<Dialog data={userData} id={d.id}/>
-		  </>
+			<Dialog key={d.id} data={userData} id={d.id}/>
 		)
 	  })}
 	  <MessagesContent addNewMessage={addNewMessage}/>

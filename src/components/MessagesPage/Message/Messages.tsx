@@ -1,7 +1,6 @@
 import React from 'react';
 import s from './Message.module.css';
 import {DialogType} from '../Dialog/Dialog';
-import {v1} from 'uuid';
 
 export type MessageType = {
   id: string

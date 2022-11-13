@@ -166,7 +166,7 @@ let store: StoreType = {
 	this._callSubscriber = observer
   },
   
-  dispatch(action) {
+  dispatch(action: DispatchACType) {
 	switch (action.type) {
 	  case 'ADD-MESSAGE': {
 		  let message: MessageType = {
@@ -182,6 +182,8 @@ let store: StoreType = {
 	}
   }
 }
+
+type DispatchACType = AddMessageAT
 
 export type AddMessageAT = {
   type: 'ADD-MESSAGE'

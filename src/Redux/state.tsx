@@ -1,10 +1,10 @@
 import {v1} from 'uuid';
-import {MessageType} from '../components/MessagesPage/Message/Messages';
 import {AppType} from '../App';
+import messagesReducer from './messages-reducer';
 
 const ID1 = v1();
 const ID2 = v1();
-const ID3 = v1();
+export const ID3 = v1();
 
 const messages = {
   [ID1]: [
@@ -158,28 +158,18 @@ let store: StoreType = {
   _callSubscriber(state: AppType) {
     console.log(state)
   },
+  
   getState() {
 	return this._state
   },
-  
   subscribe(observer: (state: AppType) => void) {
 	this._callSubscriber = observer
   },
   
   dispatch(action) {
-	switch (action.type) {
-	  case 'ADD-MESSAGE': {
-		  let message: MessageType = {
-			id: v1(),
-			message: action.newMessage
-		  }
-		  if (action.newMessage) {
-			this._state.dialogs[ID3].map(v => v.messages.push(message))
-			this._callSubscriber(this._state)
-		  }
-	   
-	  }
-	}
+	messagesReducer(this._state.dialogs[ID3], action);
+ 
+	this._callSubscriber(this._state)
   }
 }
 

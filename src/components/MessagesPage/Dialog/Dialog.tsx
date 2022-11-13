@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import s from './Dialog.module.css';
 import {Messages, MessageType} from '../Message/Messages';
 import {NavLink} from 'react-router-dom';
+import {MessagesContent} from '../MessagesContent/MessagesContent';
 
 export type DialogType = {
   id: string
@@ -56,6 +57,6 @@ export const Dialog = (props: DialogsDataType) => {
 	  })}
       
         <Messages data={data} isMessengerOpen={messenger}/>
-	</NavLink>
+    </NavLink>
   );
 };

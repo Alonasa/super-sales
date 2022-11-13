@@ -14,6 +14,7 @@ import {Favorites} from './components/Favorites/Favorites';
 import {AddType} from './components/Ads/Add';
 import {DialogsType} from './components/MessagesPage/Dialog/Dialog';
 import {PriceItemType} from './components/Pricing/Pricing';
+import {DispatchACType} from './Redux/state';
 
 export type AppType = {
   adds: Array<AddType>
@@ -24,7 +25,7 @@ export type AppType = {
 
 type AppDataType = {
   state: AppType
-  dispatch: (newMessage: string) => void
+  dispatch: (action: DispatchACType) => void
 }
 
 function App(props: AppDataType) {

@@ -47,8 +47,8 @@ export type StoreType = {
   _state: AppType
   _callSubscriber: (state: AppType) => void
   getState: () => AppType
-  addMessage: (newMessage: string) => void
   subscribe: (observer: (state: AppType) => void) => void
+  dispatch: (action: any) => void
 }
 
 let store: StoreType = {
@@ -161,18 +161,25 @@ let store: StoreType = {
   getState() {
 	return this._state
   },
-  addMessage(newMessage: string) {
-	let message: MessageType = {
-	  id: v1(),
-	  message: newMessage
-	}
-	if (newMessage) {
-	  this._state.dialogs[ID3].map(v => v.messages.push(message))
-	  this._callSubscriber(this._state)
-	}
-  },
+  
   subscribe(observer: (state: AppType) => void) {
 	this._callSubscriber = observer
+  },
+  
+  dispatch(action) {
+	switch (action.type) {
+	  case 'ADD-MESSAGE': {
+		  let message: MessageType = {
+			id: v1(),
+			message: action.newMessage
+		  }
+		  if (action.newMessage) {
+			this._state.dialogs[ID3].map(v => v.messages.push(message))
+			this._callSubscriber(this._state)
+		  }
+	   
+	  }
+	}
   }
 }
 

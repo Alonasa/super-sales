@@ -24,11 +24,11 @@ export type AppType = {
 
 type AppDataType = {
   state: AppType
-  addMessage: (newMessage: string) => void
+  dispatch: (newMessage: string) => void
 }
 
 function App(props: AppDataType) {
-  const  {addMessage} = props;
+  const  {dispatch} = props;
   const {adds, dataId, dialogs, prices} = props.state;
   
   
@@ -42,7 +42,7 @@ function App(props: AppDataType) {
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/my-account" element={<MyAccount/>}/>
           <Route path="/messages"
-                 element={<Dialogs data={dataId} dialogsData={dialogs} addNewMessage={addMessage}/>}/>
+                 element={<Dialogs data={dataId} dialogsData={dialogs} dispatch={dispatch}/>}/>
           <Route path="/favorites"
                  element={<Favorites items={adds}/>}/>
         </Routes>

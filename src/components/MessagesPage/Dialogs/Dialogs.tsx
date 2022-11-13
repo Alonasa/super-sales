@@ -2,6 +2,7 @@ import React from 'react';
 import {Dialog, DialogsType} from '../Dialog/Dialog';
 import {Container} from '@mui/material';
 import {MessagesContent} from '../MessagesContent/MessagesContent';
+import {AddMessageAT} from '../../../Redux/state';
 
 export type DataType = {
   id: string
@@ -10,11 +11,11 @@ export type DataType = {
 export type DialogsDatatype = {
   data: Array<DataType>
   dialogsData: DialogsType
-  addNewMessage: (value: string) => void
+  dispatch: (value: AddMessageAT) => void
 }
 
 export const Dialogs = (props: DialogsDatatype) => {
-  const {data, dialogsData, addNewMessage} = props
+  const {data, dialogsData, dispatch} = props
   return (
 	<Container style={{padding: '0 5vw'}}>
 	  {data.map(d => {
@@ -24,7 +25,7 @@ export const Dialogs = (props: DialogsDatatype) => {
 			<Dialog key={d.id} data={userData} id={d.id}/>
 		)
 	  })}
-	  <MessagesContent addNewMessage={addNewMessage}/>
+	  <MessagesContent addNewMessage={dispatch}/>
 	</Container>
   );
 };

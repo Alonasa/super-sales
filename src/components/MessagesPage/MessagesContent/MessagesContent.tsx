@@ -2,9 +2,10 @@ import React, {useState, KeyboardEvent} from 'react';
 import {Button, TextareaAutosize} from '@mui/material';
 import s from './MessagesContent.module.css';
 import {Send} from '@mui/icons-material';
+import {AddMessageAT} from '../../../Redux/state';
 
 type contentType = {
-  addNewMessage: (value: string) => void
+  addNewMessage: (value: AddMessageAT) => void
 }
 
 export const MessagesContent = (props: contentType) => {
@@ -17,7 +18,7 @@ export const MessagesContent = (props: contentType) => {
   
   const sendMessageHandler = () => {
 	if(newMessage) {
-	  props.addNewMessage(newMessage.trim())
+	  props.addNewMessage({type: 'ADD-MESSAGE', newMessage: newMessage.trim()})
 	  setMessage('')
 	}
   }

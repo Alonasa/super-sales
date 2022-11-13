@@ -183,5 +183,9 @@ let store: StoreType = {
   }
 }
 
+export type AddMessageAT = {
+  type: 'ADD-MESSAGE'
+  newMessage: string
+}
 
 export default store

@@ -43,7 +43,15 @@ const messages = {
 }
 
 
-let store = {
+export type StoreType = {
+  _state: AppType
+  _callSubscriber: (state: AppType) => void
+  getState: () => AppType
+  addMessage: (newMessage: string) => void
+  subscribe: (observer: (state: AppType) => void) => void
+}
+
+let store: StoreType = {
   _state: {
 	adds: [
 	  {
@@ -148,6 +156,7 @@ let store = {
 	],
   },
   _callSubscriber(state: AppType) {
+    console.log(state)
   },
   getState() {
 	return this._state

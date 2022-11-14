@@ -164,7 +164,7 @@ let store: StoreType = {
   },
   
   dispatch(action) {
-	messagesReducer(this._state.dialogs[ID3], action);
+	messagesReducer(this._state.messages[ID3], action);
  
 	this._callSubscriber(this._state)
   }

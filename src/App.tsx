@@ -15,11 +15,13 @@ import {AddType} from './components/Ads/Add';
 import {DialogsType} from './components/MessagesPage/Dialog/Dialog';
 import {PriceItemType} from './components/Pricing/Pricing';
 import {DispatchACType} from './Redux/state';
+import {MessagesListType} from './components/MessagesPage/Message/Messages';
 
 export type AppType = {
   adds: Array<AddType>
   dataId: Array<DataType>
   dialogs: DialogsType
+  messages: MessagesListType
   prices: Array<PriceItemType>
 }
 

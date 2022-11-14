@@ -6,42 +6,6 @@ const ID1 = v1();
 const ID2 = v1();
 export const ID3 = v1();
 
-const messages = {
-  [ID1]: [
-	{
-	  id: v1(),
-	  message: 'Hi'
-	},
-	{
-	  id: v1(),
-	  message: 'What are you doing?',
-	},
-	{id: v1(), message: 'Will you join lesson today?'},
-  ],
-  [ID2]: [
-	{
-	  id: v1(),
-	  message: 'Hi'
-	},
-	{
-	  id: v1(),
-	  message: 'What are you doing?',
-	},
-	{id: v1(), message: 'Will you join lesson today?'},
-  ],
-  [ID3]: [
-	{
-	  id: v1(),
-	  message: 'Hi'
-	},
-	{
-	  id: v1(),
-	  message: 'What are you doing?',
-	},
-	{id: v1(), message: 'Will you join lesson today? I need to check'},
-  ],
-}
-
 
 export type StoreType = {
   _state: AppType
@@ -98,6 +62,42 @@ let store: StoreType = {
 	  },
 	],
 	
+	messages: {
+	  [ID1]: [
+		{
+		  id: v1(),
+		  message: 'Hi'
+		},
+		{
+		  id: v1(),
+		  message: 'What are you doing?',
+		},
+		{id: v1(), message: 'Will you join lesson today?'},
+	  ],
+	  [ID2]: [
+		{
+		  id: v1(),
+		  message: 'Hi'
+		},
+		{
+		  id: v1(),
+		  message: 'What are you doing?',
+		},
+		{id: v1(), message: 'Will you join lesson today?'},
+	  ],
+	  [ID3]: [
+		{
+		  id: v1(),
+		  message: 'Hi'
+		},
+		{
+		  id: v1(),
+		  message: 'What are you doing?',
+		},
+		{id: v1(), message: 'Will you join lesson today? I need to check'},
+	  ],
+	},
+	
 	dataId: [
 	  {id: ID1},
 	  {id: ID2},
@@ -110,21 +110,18 @@ let store: StoreType = {
 		firstName: 'Bob',
 		secondName: 'Michael',
 		isOnline: false,
-		messages: messages[ID1]
 	  }],
 	  [ID2]: [{
 		id: v1(),
 		firstName: 'Anna',
 		secondName: 'Michael',
 		isOnline: true,
-		messages: messages[ID2]
 	  }],
 	  [ID3]: [{
 		id: v1(),
 		firstName: 'Kate',
 		secondName: 'Michael',
 		isOnline: false,
-		messages: messages[ID3]
 	  }],
 	},
 	

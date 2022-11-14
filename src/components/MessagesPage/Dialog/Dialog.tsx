@@ -9,7 +9,6 @@ export type DialogType = {
   firstName: string
   secondName: string
   isOnline: boolean
-  messages: Array<MessageType>
 }
 
 export type DialogsDataType = {

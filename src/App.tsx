@@ -32,7 +32,7 @@ type AppDataType = {
 
 function App(props: AppDataType) {
   const  {dispatch} = props;
-  const {adds, dataId, dialogs, prices} = props.state;
+  const {adds, dataId, dialogs,messages, prices} = props.state;
   
   
   return (
@@ -45,7 +45,7 @@ function App(props: AppDataType) {
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/my-account" element={<MyAccount/>}/>
           <Route path="/messages"
-                 element={<Dialogs data={dataId} dialogsData={dialogs} dispatch={dispatch}/>}/>
+                 element={<Dialogs data={dataId} dialogsData={dialogs} messages={messages} dispatch={dispatch}/>}/>
           <Route path="/favorites"
                  element={<Favorites items={adds}/>}/>
         </Routes>

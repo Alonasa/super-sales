@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import s from './Dialog.module.css';
 import {Messages, MessageType} from '../Message/Messages';
 import {NavLink} from 'react-router-dom';
-import {MessagesContent} from '../MessagesContent/MessagesContent';
 
 export type DialogType = {
   id: string
@@ -14,6 +13,7 @@ export type DialogType = {
 export type DialogsDataType = {
   id: string
   data: Array<DialogType>
+  messages: Array<MessageType>
 }
 
 export type DialogsType = {
@@ -21,7 +21,7 @@ export type DialogsType = {
 }
 
 export const Dialog = (props: DialogsDataType) => {
-  let {data, id} = props
+  let {data, id, messages} = props
   
   const [messenger, setMessenger] = useState(true)
   
@@ -33,7 +33,6 @@ export const Dialog = (props: DialogsDataType) => {
     <NavLink to={id.substr(0, 8)} key={id} className={s.dialog}
              onClick={messengerHandler}>
       {data.map(d => {
-	  
 		return (
           <div key={d.id} className={s.dialog__wrapper}>
             <>
@@ -54,8 +53,8 @@ export const Dialog = (props: DialogsDataType) => {
 		  </div>
 		)
 	  })}
-      
-        <Messages data={data} isMessengerOpen={messenger}/>
+  
+      <Messages data={messages} isMessengerOpen={messenger}/>
     </NavLink>
   );
 };

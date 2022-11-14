@@ -12,7 +12,7 @@ export type MessagesListType = {
 }
 
 type MessagesType = {
-  data: Array<DialogType>
+  data: Array<MessageType>
   isMessengerOpen: boolean
   addNewMessage?: (value: string) => void
 }
@@ -23,26 +23,20 @@ export const Messages = (props: MessagesType) => {
   
   const MessengerOpen = () => {
     return (
-      <>
-        {data.map(d => {
-          return (
-            <li key={d.messages[d.messages.length - 1].id}>
-              {d.messages[d.messages.length - 1].message}
+            <li key={data[data.length - 1].id}>
+              {data[data.length - 1].message}
             </li>
-          )
-        })}
-      </>
     )
   }
   
   const MessengerClosed = () => {
     return (
       <>
-        {data.map(d => d.messages.map(m => {
+        {data.map(m => {
           return (
             <li key={m.id}>{m.message}</li>
           )
-        }))}
+        })}
       </>
     )
   }

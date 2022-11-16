@@ -7,9 +7,13 @@ import dataReducer from './data-reducer';
 
 export type DispatchACType = AddMessageAT
 
-export type AddMessageAT = {
-  type: 'ADD-MESSAGE'
-  newMessage: string
+export type AddMessageAT = ReturnType<typeof AddMessageAC>
+
+export const AddMessageAC =(value:string)=> {
+  return {
+    type: 'ADD-MESSAGE',
+    newMessage: value
+  }
 }
 
 let reducers = combineReducers({

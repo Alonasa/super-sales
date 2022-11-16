@@ -17,6 +17,7 @@ export const MessagesContent = (props: contentType) => {
   }
   
   const sendMessageHandler = () => {
+    debugger
 	if(newMessage) {
 	  props.addNewMessage({type: 'ADD-MESSAGE', newMessage: newMessage.trim()})
 	  setMessage('')

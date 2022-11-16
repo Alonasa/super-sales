@@ -31,6 +31,8 @@ type AppDataType = {
 }
 
 function App(props: AppDataType) {
+  debugger
+  
   const  {dispatch} = props;
   const {adds, dataId, dialogs,messages, prices} = props.state;
   

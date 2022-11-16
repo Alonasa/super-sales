@@ -1,9 +1,9 @@
 import {v1} from 'uuid';
 import {AppType} from '../App';
-import messagesReducer from './messages-reducer';
+import messagesReducer from './add-message-reducer';
 
-const ID1 = v1();
-const ID2 = v1();
+export const ID1 = v1();
+export const ID2 = v1();
 export const ID3 = v1();
 
 
@@ -166,6 +166,7 @@ let store: StoreType = {
   dispatch(action) {
 	messagesReducer(this._state.messages[ID3], action);
  
+	
 	this._callSubscriber(this._state)
   }
 }

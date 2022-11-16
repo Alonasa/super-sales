@@ -17,6 +17,7 @@ export type DialogsDatatype = {
 }
 
 export const Dialogs = (props: DialogsDatatype) => {
+  
   const {data, dialogsData, messages, dispatch} = props
   return (
 	<Container style={{padding: '0 5vw'}}>

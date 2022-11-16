@@ -26,7 +26,6 @@ export const MessagesContent = (props: contentType) => {
   const onKeyPressHandler = (e: KeyboardEvent<HTMLTextAreaElement>) => {
     e.key === 'Enter' && sendMessageHandler()
   }
-  
   return (
 	<div className={s.messagesContent}>
 	  <TextareaAutosize

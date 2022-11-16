@@ -1,7 +1,8 @@
 import {v1} from 'uuid';
 import {ID1, ID2, ID3} from './state';
+import {DialogsType} from '../components/MessagesPage/Dialog/Dialog';
 
-let dialogs = {
+let dialogs:DialogsType = {
   [ID1]: [{
 	id: v1(),
 	firstName: 'Bob',
@@ -23,7 +24,7 @@ let dialogs = {
 }
 
 
-const dialogsReducer = (state = dialogs, action: any) => {
+const dialogsReducer = (state = dialogs) => {
   return state
 }
 

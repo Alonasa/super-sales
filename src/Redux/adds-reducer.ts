@@ -1,6 +1,7 @@
 import {v1} from 'uuid';
+import {AddType} from '../components/Ads/Add';
 
-let adds = [
+let adds:Array<AddType> = [
   {
 	id: v1(),
 	title: '1',

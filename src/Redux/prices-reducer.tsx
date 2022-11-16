@@ -1,6 +1,7 @@
 import {v1} from 'uuid';
+import {PriceItemType} from '../components/Pricing/Pricing';
 
-let prices = [
+let prices: Array<PriceItemType> = [
   {
 	id: v1(),
 	header: 'Free',
@@ -27,7 +28,7 @@ let prices = [
   }
 ]
 
-const pricesReducer = (state = prices, action: any) => {
+const pricesReducer = (state = prices) => {
   return state
 }
 

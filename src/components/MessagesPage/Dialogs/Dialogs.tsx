@@ -2,7 +2,7 @@ import React from 'react';
 import {Dialog, DialogsType} from '../Dialog/Dialog';
 import {Container} from '@mui/material';
 import {MessagesContent} from '../MessagesContent/MessagesContent';
-import {AddMessageAT} from '../../../Redux/state';
+import {AddMessageAT} from '../../../Redux/redux-store';
 import {MessagesListType} from '../Message/Messages';
 
 export type DataType = {
@@ -17,7 +17,6 @@ export type DialogsDatatype = {
 }
 
 export const Dialogs = (props: DialogsDatatype) => {
-  
   const {data, dialogsData, messages, dispatch} = props
   return (
 	<Container style={{padding: '0 5vw'}}>

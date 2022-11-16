@@ -2,7 +2,7 @@ import React, {useState, KeyboardEvent} from 'react';
 import {Button, TextareaAutosize} from '@mui/material';
 import s from './MessagesContent.module.css';
 import {Send} from '@mui/icons-material';
-import {AddMessageAT} from '../../../Redux/state';
+import {AddMessageAT} from '../../../Redux/redux-store';
 
 type contentType = {
   addNewMessage: (value: AddMessageAT) => void

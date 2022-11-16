@@ -1,21 +1,15 @@
-import {MessageType} from '../components/MessagesPage/Message/Messages';
+import {
+  MessagesListType,
+  MessageType
+} from '../components/MessagesPage/Message/Messages';
 import {v1} from 'uuid';
-import {AddMessageAT, ID1, ID2, ID3} from './state';
+import {AddMessageAT} from './redux-store';
+import { ID1, ID2, ID3 } from './state';
 
-let initialState = [
-	{
-	  id: v1(),
-	  message: 'Hi'
-	},
-	{
-	  id: v1(),
-	  message: 'What are you doing?',
-	},
-	{id: v1(), message: 'Will you join lesson today? I need to check'},
-  ]
 
-let messages = {
-  [ID1]: [
+
+let messages:MessagesListType = {
+  	[ID1]: [
 	{
 	  id: v1(),
 	  message: 'Hi'
@@ -51,14 +45,15 @@ let messages = {
 }
 
 
-const addMessageReducer = (state: any = messages, action: AddMessageAT) => {
-    if (action.type === 'ADD-MESSAGE') {
+const addMessageReducer = (state = messages, action: AddMessageAT) => {
+  if (action.type === 'ADD-MESSAGE') {
 	let message: MessageType = {
 	  id: v1(),
 	  message: action.newMessage
 	}
 	if (action.newMessage) {
-	  return state.push(message)
+	  state[ID3].push(message)
+	  return state
 	}
   } else {
 	return state

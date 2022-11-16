@@ -14,7 +14,7 @@ import {Favorites} from './components/Favorites/Favorites';
 import {AddType} from './components/Ads/Add';
 import {DialogsType} from './components/MessagesPage/Dialog/Dialog';
 import {PriceItemType} from './components/Pricing/Pricing';
-import {DispatchACType} from './Redux/state';
+import {DispatchACType} from './Redux/redux-store';
 import {MessagesListType} from './components/MessagesPage/Message/Messages';
 
 export type AppType = {
@@ -25,14 +25,12 @@ export type AppType = {
   prices: Array<PriceItemType>
 }
 
-type AppDataType = {
+export type AppDataType = {
   state: AppType
   dispatch: (action: DispatchACType) => void
 }
 
 function App(props: AppDataType) {
-  debugger
-  
   const  {dispatch} = props;
   const {adds, dataId, dialogs,messages, prices} = props.state;
   

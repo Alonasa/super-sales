@@ -13,7 +13,7 @@ export const AddMessageAC =(value:string)=> {
   return {
     type: 'ADD-MESSAGE',
     newMessage: value
-  }
+  } as const
 }
 
 let reducers = combineReducers({

@@ -1,9 +1,9 @@
 import React from 'react';
 import {Dialog, DialogsType} from '../Dialog/Dialog';
 import {Container} from '@mui/material';
-import {MessagesContent} from '../MessagesContent/MessagesContent';
 import {AddMessageAT} from '../../../Redux/redux-store';
 import {MessagesListType} from '../Message/Messages';
+import {MessagesContentContainer} from '../MessagesContent/MessagesContentContainer';
 
 export type DataType = {
   id: string
@@ -27,7 +27,7 @@ export const Dialogs = (props: DialogsDatatype) => {
 			<Dialog key={d.id} data={userData} id={d.id} messages={messages[d.id]}/>
 		)
 	  })}
-	  <MessagesContent addNewMessage={dispatch}/>
+	  <MessagesContentContainer addNewMessage={dispatch}/>
 	</Container>
   );
 };

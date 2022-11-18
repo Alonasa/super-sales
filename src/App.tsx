@@ -31,7 +31,8 @@ export type AppDataType = {
 }
 
 function App() {
-
+  const  {dispatch} = props;
+  const {adds, dataId, dialogs,messages, prices} = props.state;
   
   
   return (

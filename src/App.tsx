@@ -30,11 +30,7 @@ export type AppDataType = {
   dispatch: (action: DispatchACType) => void
 }
 
-function App() {
-  const  {dispatch} = props;
-  const {adds, dataId, dialogs,messages, prices} = props.state;
-  
-  
+const App = () => {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>

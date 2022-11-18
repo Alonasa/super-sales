@@ -16,6 +16,7 @@ import {DialogsType} from './components/MessagesPage/Dialog/Dialog';
 import {PriceItemType} from './components/Pricing/Pricing';
 import {DispatchACType} from './Redux/redux-store';
 import {MessagesListType} from './components/MessagesPage/Message/Messages';
+import {BodyContainer} from './components/Body/BodyContainer';
 
 export type AppType = {
   adds: Array<AddType>
@@ -36,14 +37,14 @@ const App = () => {
       <ThemeProvider theme={theme}>
         <Head/>
         <Routes>
-          <Route path="/" element={<Body items={adds}/>}/>
-          <Route path="/post-add" element={<PostAdd data={prices}/>}/>
-          <Route path="/profile" element={<Profile/>}/>
-          <Route path="/my-account" element={<MyAccount/>}/>
-          <Route path="/messages"
-                 element={<Dialogs data={dataId} dialogsData={dialogs} messages={messages} dispatch={dispatch}/>}/>
-          <Route path="/favorites"
-                 element={<Favorites items={adds}/>}/>
+          <Route path="/" element={<BodyContainer/>}/>
+          {/*<Route path="/post-add" element={<PostAdd data={prices}/>}/>*/}
+          {/*<Route path="/profile" element={<Profile/>}/>*/}
+          {/*<Route path="/my-account" element={<MyAccount/>}/>*/}
+          {/*<Route path="/messages"*/}
+          {/*       element={<Dialogs data={dataId} dialogsData={dialogs} messages={messages} dispatch={dispatch}/>}/>*/}
+          {/*<Route path="/favorites"*/}
+          {/*       element={<Favorites items={adds}/>}/>*/}
         </Routes>
         <Footer/>
       </ThemeProvider>

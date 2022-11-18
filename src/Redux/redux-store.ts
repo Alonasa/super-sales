@@ -17,8 +17,8 @@ export const AddMessageAC =(value:string)=> {
 }
 
 let reducers = combineReducers({
-  messages: addMessageReducer,
   adds: addsReducer,
+  messages: addMessageReducer,
   dialogs: dialogsReducer,
   prices: pricesReducer,
   dataId: dataReducer

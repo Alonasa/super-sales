@@ -30,9 +30,8 @@ export type AppDataType = {
   dispatch: (action: DispatchACType) => void
 }
 
-function App(props: AppDataType) {
-  const  {dispatch} = props;
-  const {adds, dataId, dialogs,messages, prices} = props.state;
+function App() {
+
   
   
   return (

@@ -13,6 +13,8 @@ import {DispatchACType} from './Redux/redux-store';
 import {MessagesListType} from './components/MessagesPage/Message/Messages';
 import BodyContainer from './components/Body/BodyContainer';
 import PostAddContainer from './components/PostAdd/PostAddContainer';
+import { Profile } from './components/Profile/Profile';
+import {MyAccount} from './components/MyAccount/MyAccount';
 
 export type AppType = {
   items: Array<AddType>
@@ -33,9 +35,11 @@ const App = () => {
       <ThemeProvider theme={theme}>
         <Head/>
         <Switch>
-          <Route path="/" exact><BodyContainer/></Route>
-          <Route path="/super-sales"><BodyContainer/></Route>
-          <Route path="/post-add"><PostAddContainer/></Route>
+          <Route path="/" exact render={()=><BodyContainer/>}/>
+          <Route path="/super-sales" render={()=><BodyContainer/>}/>
+          <Route path="/post-add" render={()=><PostAddContainer/>}/>
+          <Route path="/profile" render={()=><Profile/>}/>
+          <Route path="/my-account" render={()=><MyAccount/>}/>
         </Switch>
       
         {/*<Route path="/post-add" element={<PostAdd data={prices}/>}/>*/}

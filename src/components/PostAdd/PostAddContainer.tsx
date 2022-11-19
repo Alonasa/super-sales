@@ -10,6 +10,6 @@ let mapStateToProps = (store: PricingType) => {
 }
 
 
-const BodyContainer = connect(mapStateToProps)(PostAdd);
+const PostAddContainer = connect(mapStateToProps)(PostAdd);
 
-export default BodyContainer
+export default PostAddContainer

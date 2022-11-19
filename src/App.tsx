@@ -4,7 +4,7 @@ import {Head} from './components/Head/Head';
 import {Footer} from './components/Footer/Footer';
 import {theme} from './components/Theme';
 import {ThemeProvider} from '@mui/material';
-import {Route, Routes} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import {DataType} from './components/MessagesPage/Dialogs/Dialogs';
 import {AddType} from './components/Ads/Add';
 import {DialogsType} from './components/MessagesPage/Dialog/Dialog';
@@ -31,10 +31,10 @@ const App = () => {
     <div className="App">
       <ThemeProvider theme={theme}>
         <Head/>
-        <Routes>
-          <Route path="/" element={<BodyContainer/>}/>
-        </Routes>
-    
+        <Switch>
+          <Route path="/" render={() => <BodyContainer/>}/>
+        </Switch>
+      
         {/*<Route path="/post-add" element={<PostAdd data={prices}/>}/>*/}
         {/*<Route path="/profile" element={<Profile/>}/>*/}
         {/*<Route path="/my-account" element={<MyAccount/>}/>*/}
@@ -45,7 +45,6 @@ const App = () => {
         <Footer/>
       </ThemeProvider>
     </div>
-
   );
 }
 

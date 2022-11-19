@@ -1,13 +1,16 @@
+import React from 'react';
 import {connect} from 'react-redux';
 import {Body} from './Body';
 import {AddsType} from '../Ads/Add';
 
-let mapStateToProps = (state: any)=> {
+let mapStateToProps = (store: AddsType)=> {
   return {
-    items: state.items
+    items: store.items
   }
 }
 
 
 
-export const BodyContainer = connect(mapStateToProps)(Body)
+const BodyContainer = connect(mapStateToProps)(Body);
+
+export default BodyContainer

@@ -20,7 +20,7 @@ let reducers = combineReducers({
   items: addsReducer,
   messages: addMessageReducer,
   dialogs: dialogsReducer,
-  prices: pricesReducer,
+  data: pricesReducer,
   dataId: dataReducer
 });
 

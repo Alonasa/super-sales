@@ -12,6 +12,7 @@ import {PriceItemType} from './components/Pricing/Pricing';
 import {DispatchACType} from './Redux/redux-store';
 import {MessagesListType} from './components/MessagesPage/Message/Messages';
 import BodyContainer from './components/Body/BodyContainer';
+import PostAddContainer from './components/PostAdd/PostAddContainer';
 
 export type AppType = {
   items: Array<AddType>
@@ -32,7 +33,9 @@ const App = () => {
       <ThemeProvider theme={theme}>
         <Head/>
         <Switch>
-          <Route path="/" render={() => <BodyContainer/>}/>
+          <Route path="/" exact><BodyContainer/></Route>
+          <Route path="/super-sales"><BodyContainer/></Route>
+          <Route path="/post-add"><PostAddContainer/></Route>
         </Switch>
       
         {/*<Route path="/post-add" element={<PostAdd data={prices}/>}/>*/}

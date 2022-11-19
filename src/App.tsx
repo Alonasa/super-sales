@@ -16,6 +16,8 @@ import PostAddContainer from './components/PostAdd/PostAddContainer';
 import { Profile } from './components/Profile/Profile';
 import {MyAccount} from './components/MyAccount/MyAccount';
 import FavoritesContainer from './components/Favorites/FavoritesContainer';
+import DialogsContainer
+  from './components/MessagesPage/Dialogs/DialogsContainer';
 
 export type AppType = {
   items: Array<AddType>
@@ -42,6 +44,7 @@ const App = () => {
           <Route path="/profile" render={()=><Profile/>}/>
           <Route path="/my-account" render={()=><MyAccount/>}/>
           <Route path="/favorites" render={()=><FavoritesContainer/>}/>
+          <Route path="/messages" render={()=><DialogsContainer/>}/>
         </Switch>
       
         {/*<Route path="/post-add" element={<PostAdd data={prices}/>}/>*/}

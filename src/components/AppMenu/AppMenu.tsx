@@ -18,8 +18,8 @@ import {Favorite} from '@mui/icons-material';
 import {Button, Container} from '@mui/material';
 import styles from './AppMenu.module.css';
 
-const styleHandler = (data: boolean)=> {
-    return data ? styles.menu__link_active : styles.menu__link
+const styleHandler = (active: boolean)=> {
+    return active ? styles.menu__link_active : styles.menu__link
 }
 
 
@@ -64,9 +64,9 @@ export const AppMenu = () => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <NavLink to="/profile" className={(data)=>styleHandler(data.isActive)}><MenuItem
+      <NavLink to="/profile" className={(active)=>styleHandler(active)}><MenuItem
         onClick={handleMenuClose}>Profile</MenuItem></NavLink>
-      <NavLink to="/my-account" className={(data)=>styleHandler(data.isActive)}><MenuItem
+      <NavLink to="/my-account" className={(active)=>styleHandler(active)}><MenuItem
         onClick={handleMenuClose}>My account</MenuItem></NavLink>
     </Menu>
   );
@@ -88,7 +88,7 @@ export const AppMenu = () => {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <NavLink to={'/messages'} className={(data)=>styleHandler(data.isActive)}>
+      <NavLink to={'/messages'} className={(active)=>styleHandler(active)}>
         <MenuItem>
           <IconButton size="large" aria-label="show 4 new mails"
                       color="inherit">
@@ -100,7 +100,7 @@ export const AppMenu = () => {
         </MenuItem>
       </NavLink>
       <NavLink to="/favorites"
-               className={(data) => styleHandler(data.isActive)}>
+               className={(active) => styleHandler(active)}>
         <MenuItem>
           <IconButton size="large" aria-label="show products from wishlist"
                       color="inherit">
@@ -112,7 +112,7 @@ export const AppMenu = () => {
         </MenuItem>
       </NavLink>
       <NavLink to="/notifications"
-               className={(data) => styleHandler(data.isActive)}>
+               className={(active) => styleHandler(active)}>
         <MenuItem>
           <IconButton
             size="large"
@@ -127,7 +127,7 @@ export const AppMenu = () => {
         </MenuItem>
       </NavLink>
       <NavLink to="/post-add"
-               className={(data) => styleHandler(data.isActive)}>
+               className={(active) => styleHandler(active)}>
         <MenuItem>
           <IconButton
             size="large"
@@ -181,7 +181,7 @@ export const AppMenu = () => {
             <Box sx={{flexGrow: 1}}/>
             <Box sx={{display: {xs: 'none', md: 'flex'}}}>
               <NavLink to={'/messages'}
-                       className={(data)=>styleHandler(data.isActive)}>
+                       className={(active)=>styleHandler(active)}>
                 <IconButton size="large" aria-label="show 4 new mails"
                             color="inherit">
                   <Badge badgeContent={4} color="secondary">
@@ -190,7 +190,7 @@ export const AppMenu = () => {
                 </IconButton>
               </NavLink>
               <NavLink to={'/favorites'}
-                    className={(data)=>styleHandler(data.isActive)}>
+                    className={(active)=>styleHandler(active)}>
                 <IconButton size="large"
                             aria-label="show products from wishlist"
                             color="inherit">
@@ -200,7 +200,7 @@ export const AppMenu = () => {
                 </IconButton>
               </NavLink>
   
-              <NavLink to={'/notifications'} className={(data)=>styleHandler(data.isActive)}>
+              <NavLink to={'/notifications'} className={(active)=>styleHandler(active)}>
                 <IconButton
                   size="large"
                   aria-label="show 17 new notifications"
@@ -211,7 +211,7 @@ export const AppMenu = () => {
                   </Badge>
                 </IconButton>
               </NavLink>
-              <NavLink to="/post-add" className={(data)=>styleHandler(data.isActive)}><Button
+              <NavLink to="/post-add" className={(active)=>styleHandler(active)}><Button
                 style={{color: 'inherit', padding: '10px 8px'}}>Post
                 Add</Button>
               </NavLink>

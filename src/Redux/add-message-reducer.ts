@@ -6,7 +6,6 @@ import {v1} from 'uuid';
 import {AddMessageAT} from './redux-store';
 import {ID1, ID2, ID3} from './state';
 
-
 let messages:MessagesListType = {
   	[ID1]: [
 	{
@@ -51,10 +50,9 @@ const addMessageReducer = (state = messages, action: AddMessageAT) => {
 	  message: action.newMessage
 	}
  
-	let stateCopy = {...state}
 	if (action.newMessage) {
-	  stateCopy[ID3].push(message)
-	  return stateCopy
+	  let newState = {...state}
+	  return {...newState, [ID3]:[...messages[ID3],message]}
 	}
   } else {
 	return state

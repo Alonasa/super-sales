@@ -2,6 +2,7 @@ import React, {KeyboardEvent, useState} from 'react';
 import {Button, TextareaAutosize} from '@mui/material';
 import s from './MessagesContent.module.css';
 import {Send} from '@mui/icons-material';
+import store from '../../../Redux/redux-store';
 
 export type ContentType = {
   dispatch: (value: string) => void
@@ -21,6 +22,7 @@ export const MessagesContent = (props: ContentType) => {
 	if (newMessage) {
 	  dispatch(newMessage)
 	  setMessage('')
+	  console.log(store)
 	}
   }
   

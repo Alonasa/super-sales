@@ -46,13 +46,6 @@ const App = () => {
           <Route path="/favorites" render={()=><FavoritesContainer/>}/>
           <Route path="/messages" render={()=><DialogsContainer/>}/>
         </Switch>
-      
-        {/*<Route path="/post-add" element={<PostAdd data={prices}/>}/>*/}
-        {/*<Route path="/profile" element={<Profile/>}/>*/}
-        {/*<Route path="/my-account" element={<MyAccount/>}/>*/}
-        {/*<Route path="/messages"*/}
-        {/*       element={<Dialogs data={dataId} dialogsData={dialogs} messages={messages} dispatch={dispatch}/>}/>*/}
-        {/**/}
         <Footer/>
       </ThemeProvider>
     </div>

@@ -29,7 +29,7 @@ export const Dialogs = (props: DialogsDatatype) => {
 				  messages={messages[d.id]}/>
 		)
 	  })}
-	  <MessagesContentContainer dispatch={dispatch}/>
+	  <MessagesContentContainer/>
 	</Container>
   );
 };

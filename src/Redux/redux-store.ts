@@ -19,7 +19,7 @@ export const AddMessageAC =(value:string)=> {
 let reducers = combineReducers({
   items: addsReducer,
   messages: addMessageReducer,
-  dialogs: dialogsReducer,
+  dialogsData: dialogsReducer,
   data: pricesReducer,
   dataId: dataReducer
 });

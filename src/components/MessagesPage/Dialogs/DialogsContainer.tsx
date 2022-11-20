@@ -1,20 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Dialogs, DialogsDatatype} from './Dialogs';
-import {AddMessageAT} from '../../../Redux/redux-store';
 
-let mapStateToProps = (store: any) => {
+
+let mapStateToProps = (store: DialogsDatatype) => {
   return {
-	data: store.dataId,
-	dialogsData: store.dialogs,
+	dataId: store.dataId,
+	dialogsData: store.dialogsData,
 	messages: store.messages,
-	dispatch: store.dispatch
-  }
-}
-
-let mapDispatchToProps = (dispatch: AddMessageAT) => {
-  return {
-	dispatch
   }
 }
 

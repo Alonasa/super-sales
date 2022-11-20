@@ -3,11 +3,13 @@ import {Button, TextareaAutosize} from '@mui/material';
 import s from './MessagesContent.module.css';
 import {Send} from '@mui/icons-material';
 
-type contentType = {
-  addNewMessage: (value: string) => void
+export type ContentType = {
+  dispatch: (value: string) => void
 }
 
-export const MessagesContent = (props: contentType) => {
+export const MessagesContent = (props: ContentType) => {
+  let {dispatch} = props;
+  
   let [newMessage, setMessage] = useState('')
   
   
@@ -16,8 +18,8 @@ export const MessagesContent = (props: contentType) => {
   }
   
   const sendMessageHandler = () => {
-	if(newMessage) {
-	  props.addNewMessage(newMessage)
+	if (newMessage) {
+	  dispatch(newMessage)
 	  setMessage('')
 	}
   }

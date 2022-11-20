@@ -1,7 +1,6 @@
 import React from 'react';
-import {ContentType, MessagesContent} from './MessagesContent';
+import {MessagesContent} from './MessagesContent';
 import {connect} from 'react-redux';
-import {AddMessageAT} from '../../../Redux/redux-store';
 
 let mapStateToProps = (state: any) => {
   return {

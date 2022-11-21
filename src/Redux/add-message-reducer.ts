@@ -51,9 +51,7 @@ const addMessageReducer = (state = messages, action: AddMessageAT) => {
 	}
  
 	if (action.newMessage) {
-	  let newState = {...state}
-	  console.log(newState)
-	  return {...newState, [ID3]:[...newState[ID3], message]}
+	  return {...state, [ID3]:[...state[ID3], message]}
 	}
   } else {
 	return state

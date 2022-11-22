@@ -76,3 +76,10 @@
 .profile__mode_row {
     flex-direction: row;
 }
+
+.profile__helpers_wrapper {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}

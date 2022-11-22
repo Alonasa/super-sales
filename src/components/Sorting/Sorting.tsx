@@ -1,35 +1,35 @@
-import React from 'react';
-import {ToggleButton, ToggleButtonGroup} from '@mui/material';
-import ViewListIcon from '@mui/icons-material/ViewList';
-import ViewModuleIcon from '@mui/icons-material/ViewModule';
+import React, {useState} from 'react';
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent
+} from '@mui/material';
 
-type SortingType = {
-  onClick: () => void
-}
-
-export const Sorting = (props: SortingType) => {
-  const {onClick} = props
+export const Sorting = () => {
+  const [sort, setSort] = useState('newest');
+  const handleSortingChange = (e:  SelectChangeEvent)=> {
+    setSort(e.target.value)
+  }
   
-  const [view, setView] = React.useState('list');
-  
-  const handleChange = (event: React.MouseEvent<HTMLElement>, nextView: string) => {
-	setView(nextView);
-  };
   
   return (
-	<ToggleButtonGroup
-	  orientation="horizontal"
-	  value={view}
-	  exclusive
-	  onChange={handleChange}
-	  sx={{margin: '20px'}}
-	>
-	  <ToggleButton value="list" aria-label="list" onClick={onClick}>
-		<ViewListIcon/>
-	  </ToggleButton>
-	  <ToggleButton value="module" aria-label="module" onClick={onClick}>
-		<ViewModuleIcon/>
-	  </ToggleButton>
-	</ToggleButtonGroup>
+	<FormControl>
+	  <InputLabel id="select-label">Sort by</InputLabel>
+	  <Select
+		labelId="select-label"
+		id="select"
+		value={sort}
+		label="Sort by"
+		onChange={handleSortingChange}
+		size={'small'}
+	  >
+		<MenuItem value={'cheap'}>Cheap</MenuItem>
+		<MenuItem value={'expensive'}>Expensive</MenuItem>
+		<MenuItem value={'newest'}>Newest</MenuItem>
+		<MenuItem value={'oldest'}>Oldest</MenuItem>
+	  </Select>
+	</FormControl>
   );
 };

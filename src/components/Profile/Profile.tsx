@@ -2,11 +2,12 @@ import React, {MouseEvent, useState} from 'react';
 import s from './Profile.module.css'
 import {
   Button,
-  Container,
+  Container, FormControl, InputLabel, MenuItem, Select,
   ToggleButton,
   ToggleButtonGroup
 } from '@mui/material';
 import {FavoriteBorder} from '@mui/icons-material';
+import {ViewMode} from '../Sorting/ViewMode';
 import {Sorting} from '../Sorting/Sorting';
 
 export const Profile = () => {
@@ -71,62 +72,29 @@ export const Profile = () => {
 		  <Container className={s.profile__data_content}>
 			<div></div>
 			<div>
-			  <div className={s.profile__user_helpers}></div>
-			  <Sorting onClick={viewHandler}/>
+			  <div className={s.profile__helpers_wrapper}>
+				<ViewMode onClick={viewHandler}/>
+				<Sorting/>
+			  </div>
 			  <div className={`${s.profile__mode} ${viewMode}`}>
-				<div id="all-ads">Ads
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add
-				  Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add
-				  Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add
-				  Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add
-				  Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add
-				  Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add
-				  Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add
-				  Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add
-				  Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add
-				  Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add
-				  Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add
-				  Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add
-				  Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add
-				  Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add
-				  Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add
-				  Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add
-				  Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add
-				  Add
-				  Add Add Add Add Add Add Add Add Add Add Add
+				<div id="all-ads">
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add
 				</div>
 				<div id="about">
 				  About UsAbout UsAbout UsAbout UsAbout UsAbout UsAbout UsAbout

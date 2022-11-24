@@ -34,6 +34,10 @@ const Item = styled(Paper)(({theme}) => ({
   color: theme.palette.text.secondary,
 }));
 
+const changeStatusHandler = (isFavorite: boolean, id: string) => {
+console.log('clicked')
+}
+
 export const Add = (props: AddsType) => {
   let {items} = props;
   return (
@@ -61,7 +65,7 @@ export const Add = (props: AddsType) => {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <IconButton>
+                    <IconButton onClick={()=>changeStatusHandler(p.isFavorite, p.id)}>
                       {!p.isFavorite ? <FavoriteBorder color={'primary'}/> :
                         <Favorite color={'primary'}/>}
                     </IconButton>

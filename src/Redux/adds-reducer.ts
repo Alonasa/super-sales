@@ -1,5 +1,6 @@
 import {v1} from 'uuid';
 import {AddType} from '../components/Ads/Add';
+import {MakeFavoriteAT} from './redux-store';
 
 let adds:Array<AddType> = [
   {
@@ -53,8 +54,14 @@ let adds:Array<AddType> = [
 ]
 
 
-const addsReducer = (state= adds) => {
-  return state
+const addsReducer = (state = adds, action: MakeFavoriteAT) => {
+  if (action.type === 'MAKE-FAVORITE') {
+	if (action.isFavorite) {
+	  return [...state, state.map(e => e.id === action.id ? !e.isFavorite : e)]
+	}
+  } else {
+	return state
+  }
 }
 
 export default addsReducer

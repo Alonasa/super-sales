@@ -19,6 +19,7 @@ export type AddType = {
   description: string
   price: number
   isFavorite: boolean
+  isAddedToCart: boolean
 }
 
 export type AddsType = {

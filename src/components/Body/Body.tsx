@@ -9,7 +9,7 @@ export const Body = (props: AddsType) => {
   return (
     <section>
       <SearchBar/>
-      <Container sx={{}} style={{padding:'4vh 0',}}>
+      <Container style={{padding:'4vh 0',}}>
         <Ads items={items}/>
         <Button variant={'contained'} style={{width: '25vw', height: '5vh'}}>Show more</Button>
       </Container>

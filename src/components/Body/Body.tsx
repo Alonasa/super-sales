@@ -9,9 +9,10 @@ export const Body = (props: AddsType) => {
   return (
     <section>
       <SearchBar/>
-      <Container sx={{}} style={{padding: '4vh 0'}} >
+      <Container sx={{}} style={{padding:'4vh', paddingLeft: 0,
+        paddingRight: 0}} >
         <Ads items={items}/>
-        <Button variant={'contained'} style={{ width: '25vw', height: '5vh'}}>Show more</Button>
+        <Button title={'Show more'} variant={'contained'}/>
       </Container>
     </section>
   );

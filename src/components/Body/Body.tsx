@@ -1,7 +1,7 @@
 import React from 'react';
 import {Ads} from '../Ads/Ads';
 import {SearchBar} from '../Search/SearchBar';
-import {Container} from '@mui/material';
+import {Button, Container} from '@mui/material';
 import {AddsType} from '../Ads/Add';
 
 export const Body = (props: AddsType) => {
@@ -9,9 +9,11 @@ export const Body = (props: AddsType) => {
   return (
     <section>
       <SearchBar/>
-        <Container >
-          <Ads items={items}/>
-        </Container>
+      <Container sx={{}} style={{padding:'4vh', paddingLeft: 0,
+        paddingRight: 0}} >
+        <Ads items={items}/>
+        <Button title={'Show more'} variant={'contained'}/>
+      </Container>
     </section>
   );
 };

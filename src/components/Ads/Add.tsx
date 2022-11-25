@@ -40,28 +40,31 @@ export const Add = (props: AddsType) => {
   let {items, dispatch} = props;
   
   const changeStatusHandler = (isFavorite: boolean, id: string) => {
-    debugger
     dispatch(isFavorite, id)
   }
   
+  const addToCartHandler = (id: string) => {
+    dispatch(id)
+  }
+  
   return (
-	<Box sx={{flexGrow: 1}}>
-	  <Grid container spacing={2}>
-		{items.map(p => {
-		  return (
-			<Grid key={p.id} xs={12} sm={6} md={4}>
-			  <Item>
-				<Card>
-				  <CardMedia
-					component="img"
-					height="250"
-					alt="basic picture"
-					image="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/600px-Gull_portrait_ca_usa.jpg"/>
-				  <CardContent>
-					<Typography gutterBottom variant="h3" component="div">
-					  {p.title}
-					</Typography>
-					<Typography component="span">
+    <Box sx={{flexGrow: 1}}>
+      <Grid container spacing={2}>
+        {items.map(p => {
+          return (
+            <Grid key={p.id} xs={12} sm={6} md={4}>
+              <Item>
+                <Card>
+                  <CardMedia
+                    component="img"
+                    height="250"
+                    alt="basic picture"
+                    image="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/600px-Gull_portrait_ca_usa.jpg"/>
+                  <CardContent>
+                    <Typography gutterBottom variant="h3" component="div">
+                      {p.title}
+                    </Typography>
+                    <Typography component="span">
                       {`${p.price} $`}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
@@ -69,20 +72,21 @@ export const Add = (props: AddsType) => {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <IconButton onClick={()=>changeStatusHandler(p.isFavorite, p.id)}>
+                    <IconButton
+                      onClick={() => changeStatusHandler(p.isFavorite, p.id)}>
                       {!p.isFavorite ? <FavoriteBorder color={'primary'}/> :
                         <Favorite color={'primary'}/>}
                     </IconButton>
-                    <IconButton>
+                    <IconButton onClick={() => addToCartHandler(p.id)}>
                       <AddShoppingCart color={'primary'}/>
                     </IconButton>
                   </CardActions>
-				</Card>
-			  </Item>
-			</Grid>
-		  )
-		})}
-	  </Grid>
-	</Box>
-  );
-}
+                </Card>
+              </Item>
+            </Grid>
+          )
+        })}
+      </Grid>
+    </Box>
+  )
+

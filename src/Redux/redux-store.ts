@@ -5,7 +5,7 @@ import dialogsReducer from './dialogs-reducer';
 import pricesReducer from './prices-reducer';
 import dataReducer from './data-reducer';
 
-export type DispatchACType = AddMessageAT | MakeFavoriteAT
+export type DispatchACType = AddMessageAT | MakeFavoriteAT | AddToCartAT
 
 export type AddMessageAT = ReturnType<typeof AddMessageAC>
 
@@ -22,6 +22,15 @@ export const MakeFavoriteAC = (isFavorite: boolean, id: string) => {
   return {
     type: 'MAKE-FAVORITE',
     isFavorite: isFavorite,
+    id: id
+  } as const
+}
+
+export type AddToCartAT = ReturnType<typeof AddToCartAC>
+
+export const AddToCartAC = (id: string) => {
+  return {
+    type: 'ADD-TO-CART',
     id: id
   } as const
 }

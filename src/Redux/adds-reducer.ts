@@ -55,7 +55,6 @@ let adds:Array<AddType> = [
 
 
 const addsReducer = (state = adds, action: MakeFavoriteAT) => {
-  debugger
   if (action.type === 'MAKE-FAVORITE') {
 	return [...state.map(i => i.id === action.id ? (
 	  {...i, isFavorite : !action.isFavorite

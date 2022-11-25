@@ -11,7 +11,7 @@ type MapStatePropsType = {
 
 type MapDispatchPropsType = {
   addToFavorites: (isFavorite: boolean, id: string) => void
-  addToCart: (isAddedToCart: boolean, id: string)=>void
+  addToCart: (isAddedToCart: boolean, id: string) => void
 }
 
 let mapStateToProps = (state: AppStateType): MapStatePropsType => {
@@ -20,7 +20,7 @@ let mapStateToProps = (state: AppStateType): MapStatePropsType => {
   }
 }
 
-let mapDispatchToProps = (dispatch: Dispatch):MapDispatchPropsType => {
+let mapDispatchToProps = (dispatch: Dispatch): MapDispatchPropsType => {
   return {
 	addToFavorites: (isFavorite: boolean, id: string) => {
 	  dispatch(MakeFavoriteAC(isFavorite, id))

@@ -1,7 +1,7 @@
 import {v1} from 'uuid';
 import {AddType} from '../components/Ads/Add';
 
-let adds:AddType[] = [
+let adds: AddType[] = [
   {
 	id: v1(),
 	title: '1',
@@ -71,17 +71,19 @@ export const MakeFavoriteAC = (isFavorite: boolean, id: string) => {
   } as const
 }
 
-const addsReducer = (state= adds, action: MakeFavoriteAT | AddToCartAT):AddType[] => {
+const addsReducer = (state = adds, action: MakeFavoriteAT | AddToCartAT): AddType[] => {
   switch (action.type) {
 	case 'MAKE-FAVORITE': {
 	  return [...state.map(i => i.id === action.id ? (
-		{...i, isFavorite : !action.isFavorite
-		}): i)]
+		{
+		  ...i, isFavorite: !action.isFavorite
+		}) : i)]
 	}
 	case 'ADD-TO-CART': {
-	  return  [...state.map(i => i.id === action.id ? (
-		{...i, isAddedToCart : !action.isAddedToCart
-		}): i)]
+	  return [...state.map(i => i.id === action.id ? (
+		{
+		  ...i, isAddedToCart: !action.isAddedToCart
+		}) : i)]
 	}
   }
   

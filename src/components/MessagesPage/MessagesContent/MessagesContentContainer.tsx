@@ -1,18 +1,29 @@
 import React from 'react';
 import {MessagesContent} from './MessagesContent';
 import {connect} from 'react-redux';
-import {AppType} from '../../../App';
+import {AddMessageAC} from '../../../Redux/add-message-reducer';
+import {Dispatch} from 'redux';
+import {AppStateType} from '../../../Redux/redux-store';
+import {MessagesListType} from '../Message/Messages';
 
-let mapStateToProps = (state: AppType) => {
+type MapDispatchPropsType = {
+  addMessage: (newMessage: string) => void
+}
+
+export type MapStatePropsType = {
+  state: MessagesListType | undefined
+}
+
+let mapStateToProps = (state: AppStateType): MapStatePropsType => {
   return {
-	state: state
+	state: state.messages
   }
 }
 
-let mapDispatchToProps = (dispatch: (dispatch: {type: string, newMessage: string})=>void) => {
+let mapDispatchToProps = (dispatch: Dispatch): MapDispatchPropsType => {
   return {
-	dispatch: (newMessage: string) => {
-	  dispatch({type: 'ADD-MESSAGE', newMessage: newMessage.trim()})
+	addMessage: (newMessage: string) => {
+	  dispatch(AddMessageAC(newMessage.trim()))
 	}
   }
 }

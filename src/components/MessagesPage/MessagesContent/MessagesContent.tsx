@@ -4,11 +4,11 @@ import s from './MessagesContent.module.css';
 import {Send} from '@mui/icons-material';
 
 export type ContentType = {
-  dispatch: (value: string) => void
+  addMessage: (value: string) => void
 }
 
 export const MessagesContent = (props: ContentType) => {
-  let {dispatch} = props;
+  let {addMessage} = props;
   
   let [newMessage, setMessage] = useState('')
   
@@ -19,7 +19,7 @@ export const MessagesContent = (props: ContentType) => {
   
   const sendMessageHandler = () => {
 	if (newMessage) {
-	  dispatch(newMessage)
+	  addMessage(newMessage)
 	  setMessage('')
 	}
   }

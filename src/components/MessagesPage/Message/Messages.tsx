@@ -19,7 +19,6 @@ type MessagesType = {
 export const Messages = (props: MessagesType) => {
   let {data, isMessengerOpen} = props
   
-  
   const MessengerOpen = () => {
     return (
             <li key={data[data.length - 1].id}>

@@ -24,7 +24,7 @@ export type AddType = {
 
 export type AddsType = {
   items: Array<AddType>
-  dispatch: (isFavorite: boolean, id: string) => void
+  dispatch: (isFavorite: boolean, id: string) => void | undefined
 }
 
 const Item = styled(Paper)(({theme}) => ({
@@ -40,9 +40,8 @@ export const Add = (props: AddsType) => {
   let {items, dispatch} = props;
   
   const changeStatusHandler = (isFavorite: boolean, id: string) => {
-    if (id) {
-      dispatch(!isFavorite, id)
-    }
+    debugger
+    dispatch(isFavorite, id)
   }
   
   return (

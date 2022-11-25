@@ -18,10 +18,10 @@ export const AddMessageAC = (value: string) => {
 
 export type MakeFavoriteAT = ReturnType<typeof MakeFavoriteAC>
 
-export const MakeFavoriteAC = (value: boolean, id: string) => {
+export const MakeFavoriteAC = (isFavorite: boolean, id: string) => {
   return {
     type: 'MAKE-FAVORITE',
-    isFavorite: value,
+    isFavorite: isFavorite,
     id: id
   } as const
 }

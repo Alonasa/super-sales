@@ -55,13 +55,15 @@ let adds:Array<AddType> = [
 
 
 const addsReducer = (state = adds, action: MakeFavoriteAT) => {
+  debugger
   if (action.type === 'MAKE-FAVORITE') {
-	if (action.isFavorite) {
-	  return [...state, state.map(e => e.id === action.id ? !e.isFavorite : e)]
-	}
+	return [...state.map(i => i.id === action.id ? (
+	  {...i, isFavorite : !action.isFavorite
+  }): i)]
   } else {
 	return state
   }
 }
+
 
 export default addsReducer

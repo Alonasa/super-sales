@@ -11,7 +11,12 @@ import {
   IconButton
 } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import {AddShoppingCart, Favorite, FavoriteBorder} from '@mui/icons-material';
+import {
+  AddShoppingCart,
+  Favorite,
+  FavoriteBorder,
+  ShoppingCart
+} from '@mui/icons-material';
 
 export type AddType = {
   id: string
@@ -24,7 +29,8 @@ export type AddType = {
 
 export type AddsType = {
   items: Array<AddType>
-  dispatch: (isFavorite: boolean, id: string) => void | undefined
+  addToFavorites: (isFavorite: boolean, id: string) => void
+  addToCart: (isAddedToCart: boolean, id: string) => void
 }
 
 const Item = styled(Paper)(({theme}) => ({
@@ -37,14 +43,14 @@ const Item = styled(Paper)(({theme}) => ({
 
 
 export const Add = (props: AddsType) => {
-  let {items, dispatch} = props;
+  let {items, addToFavorites, addToCart} = props;
   
   const changeStatusHandler = (isFavorite: boolean, id: string) => {
-    dispatch(isFavorite, id)
+    addToFavorites(isFavorite, id)
   }
   
-  const addToCartHandler = (id: string) => {
-    dispatch(id)
+  const addToCartHandler = (isAddedToCart: boolean, id: string) => {
+    addToCart(isAddedToCart, id)
   }
   
   return (
@@ -77,8 +83,10 @@ export const Add = (props: AddsType) => {
                       {!p.isFavorite ? <FavoriteBorder color={'primary'}/> :
                         <Favorite color={'primary'}/>}
                     </IconButton>
-                    <IconButton onClick={() => addToCartHandler(p.id)}>
-                      <AddShoppingCart color={'primary'}/>
+                    <IconButton
+                      onClick={() => addToCartHandler(p.isAddedToCart, p.id)}>
+                      {!p.isAddedToCart ? <ShoppingCart color={'primary'}/> :
+                        <AddShoppingCart color={'primary'}/>}
                     </IconButton>
                   </CardActions>
                 </Card>
@@ -89,4 +97,5 @@ export const Add = (props: AddsType) => {
       </Grid>
     </Box>
   )
+}
 

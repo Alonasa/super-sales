@@ -1,8 +1,12 @@
 import {v1} from 'uuid';
 import {AddType} from '../components/Ads/Add';
-import {MakeFavoriteAT} from './redux-store';
+import {AddToCartAT, MakeFavoriteAT} from './redux-store';
 
-let adds:Array<AddType> = [
+type InitialStateType = {
+  items: AddType[]
+}
+
+let adds:AddType[] = [
   {
 	id: v1(),
 	title: '1',
@@ -54,14 +58,21 @@ let adds:Array<AddType> = [
 ]
 
 
-const addsReducer = (state = adds, action: MakeFavoriteAT) => {
-  if (action.type === 'MAKE-FAVORITE') {
-	return [...state.map(i => i.id === action.id ? (
-	  {...i, isFavorite : !action.isFavorite
-  }): i)]
-  } else {
-	return state
+const addsReducer = (state= adds, action: MakeFavoriteAT | AddToCartAT):AddType[] => {
+  switch (action.type) {
+	case 'MAKE-FAVORITE': {
+	  return [...state.map(i => i.id === action.id ? (
+		{...i, isFavorite : !action.isFavorite
+		}): i)]
+	}
+	case 'ADD-TO-CART': {
+	  return  [...state.map(i => i.id === action.id ? (
+		{...i, isAddedToCart : !action.isAddedToCart
+		}): i)]
+	}
   }
+  
+  return state
 }
 
 

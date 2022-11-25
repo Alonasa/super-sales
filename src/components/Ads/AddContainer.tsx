@@ -2,17 +2,18 @@ import React from 'react';
 import {Add, AddsType} from './Add';
 import {connect} from 'react-redux';
 
-let mapStateToProps = (store: AddsType) => {
+let mapStateToProps = (state: AddsType) => {
   return {
-	items: store.items
+	items: state.items
   }
 }
 
-let mapDispatchToProps = (dispatch: (dispatch: { type: string, isFavorite: boolean, id: string }) => void) => {
+let mapDispatchToProps = (dispatch:(addToFavorites: { type: string, isFavorite: boolean, id: string }) => void) =>
+{
   return {
-	dispatch: (isFavorite: boolean, id: string) => {
+	addToFavorites: (isFavorite: boolean, id: string) => {
 	  dispatch({type: 'MAKE-FAVORITE', isFavorite: isFavorite, id: id})
-    }
+	},
   }
 }
 

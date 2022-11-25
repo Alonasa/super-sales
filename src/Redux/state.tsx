@@ -1,7 +1,6 @@
 import {v1} from 'uuid';
 import {AppType} from '../App';
 import messagesReducer from './add-message-reducer';
-import {DispatchACType} from './redux-store';
 
 export const ID1 = v1();
 export const ID2 = v1();

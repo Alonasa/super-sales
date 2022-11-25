@@ -1,19 +1,33 @@
 import React from 'react';
-import {Add, AddsType} from './Add';
+import {Add, AddType} from './Add';
 import {connect} from 'react-redux';
+import {AppStateType} from '../../Redux/redux-store';
+import {AddToCartAC, MakeFavoriteAC} from '../../Redux/adds-reducer';
+import {Dispatch} from 'redux';
 
-let mapStateToProps = (state: AddsType) => {
+type MapStatePropsType = {
+  items: AddType[]
+}
+
+type MapDispatchPropsType = {
+  addToFavorites: (isFavorite: boolean, id: string) => void
+  addToCart: (isAddedToCart: boolean, id: string)=>void
+}
+
+let mapStateToProps = (state: AppStateType): MapStatePropsType => {
   return {
 	items: state.items
   }
 }
 
-let mapDispatchToProps = (dispatch:(addToFavorites: { type: string, isFavorite: boolean, id: string }) => void) =>
-{
+let mapDispatchToProps = (dispatch: Dispatch):MapDispatchPropsType => {
   return {
 	addToFavorites: (isFavorite: boolean, id: string) => {
-	  dispatch({type: 'MAKE-FAVORITE', isFavorite: isFavorite, id: id})
+	  dispatch(MakeFavoriteAC(isFavorite, id))
 	},
+	addToCart: (isAddedToCart: boolean, id: string) => {
+	  dispatch(AddToCartAC(isAddedToCart, id))
+	}
   }
 }
 

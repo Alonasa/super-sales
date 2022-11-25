@@ -9,7 +9,6 @@ import {DataType} from './components/MessagesPage/Dialogs/Dialogs';
 import {AddType} from './components/Ads/Add';
 import {DialogsType} from './components/MessagesPage/Dialog/Dialog';
 import {PriceItemType} from './components/Pricing/Pricing';
-import {DispatchACType} from './Redux/redux-store';
 import {MessagesListType} from './components/MessagesPage/Message/Messages';
 import BodyContainer from './components/Body/BodyContainer';
 import PostAddContainer from './components/PostAdd/PostAddContainer';
@@ -18,6 +17,7 @@ import {MyAccount} from './components/MyAccount/MyAccount';
 import FavoritesContainer from './components/Favorites/FavoritesContainer';
 import DialogsContainer
   from './components/MessagesPage/Dialogs/DialogsContainer';
+import {AddMessageAT} from './Redux/add-message-reducer';
 
 export type AppType = {
   items: Array<AddType>
@@ -29,7 +29,7 @@ export type AppType = {
 
 export type AppDataType = {
   state: AppType
-  dispatch: (action: DispatchACType) => void
+  dispatch: (action: AddMessageAT) => void
 }
 
 const App = () => {

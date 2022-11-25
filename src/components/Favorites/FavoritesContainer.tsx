@@ -1,11 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {AddsType} from '../Ads/Add';
 import {Favorites} from './Favorites';
+import {AppStateType} from '../../Redux/redux-store';
 
-let mapStateToProps = (store: AddsType) => {
+let mapStateToProps = (state: AppStateType) => {
   return {
-	items: store.items
+	items: state.items
   }
 }
 

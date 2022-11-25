@@ -1,10 +1,5 @@
 import {v1} from 'uuid';
 import {AddType} from '../components/Ads/Add';
-import {AddToCartAT, MakeFavoriteAT} from './redux-store';
-
-type InitialStateType = {
-  items: AddType[]
-}
 
 let adds:AddType[] = [
   {
@@ -57,6 +52,24 @@ let adds:AddType[] = [
   },
 ]
 
+export type AddToCartAT = ReturnType<typeof AddToCartAC>
+export type MakeFavoriteAT = ReturnType<typeof MakeFavoriteAC>
+
+export const AddToCartAC = (isAddedToCart: boolean, id: string) => {
+  return {
+	type: 'ADD-TO-CART',
+	id: id,
+	isAddedToCart: isAddedToCart
+  } as const
+}
+
+export const MakeFavoriteAC = (isFavorite: boolean, id: string) => {
+  return {
+	type: 'MAKE-FAVORITE',
+	isFavorite: isFavorite,
+	id: id
+  } as const
+}
 
 const addsReducer = (state= adds, action: MakeFavoriteAT | AddToCartAT):AddType[] => {
   switch (action.type) {

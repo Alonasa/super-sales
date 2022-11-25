@@ -3,7 +3,6 @@ import {
   MessageType
 } from '../components/MessagesPage/Message/Messages';
 import {v1} from 'uuid';
-import {AddMessageAT} from './redux-store';
 import {ID1, ID2, ID3} from './state';
 
 let messages:MessagesListType = {
@@ -42,6 +41,15 @@ let messages:MessagesListType = {
   ],
 }
 
+
+export type AddMessageAT = ReturnType<typeof AddMessageAC>
+
+export const AddMessageAC = (value: string) => {
+  return {
+	type: 'ADD-MESSAGE',
+	newMessage: value
+  } as const
+}
 
 const addMessageReducer = (state = messages, action: AddMessageAT) => {
   if (action.type === 'ADD-MESSAGE') {

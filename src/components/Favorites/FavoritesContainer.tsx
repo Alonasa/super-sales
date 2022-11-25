@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {AddsType} from '../Ads/Add';
-import { Favorites } from './Favorites';
+import {Favorites} from './Favorites';
 
 let mapStateToProps = (store: AddsType) => {
   return {

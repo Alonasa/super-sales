@@ -24,6 +24,7 @@ export type AddType = {
 
 export type AddsType = {
   items: Array<AddType>
+  dispatch: (isFavorite: boolean, id: string) => void
 }
 
 const Item = styled(Paper)(({theme}) => ({
@@ -34,12 +35,16 @@ const Item = styled(Paper)(({theme}) => ({
   color: theme.palette.text.secondary,
 }));
 
-const changeStatusHandler = (isFavorite: boolean, id: string) => {
-console.log('clicked')
-}
 
 export const Add = (props: AddsType) => {
-  let {items} = props;
+  let {items, dispatch} = props;
+  
+  const changeStatusHandler = (isFavorite: boolean, id: string) => {
+    if (id) {
+      dispatch(!isFavorite, id)
+    }
+  }
+  
   return (
 	<Box sx={{flexGrow: 1}}>
 	  <Grid container spacing={2}>

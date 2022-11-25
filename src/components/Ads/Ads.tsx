@@ -1,13 +1,12 @@
 import React from 'react';
 import {Container} from '@mui/material';
-import {Add, AddsType} from './Add';
+import AddContainer from './AddContainer';
 
 
-export const Ads = (props: AddsType) => {
-  let {items} = props
+export const Ads = () => {
   return (
 	<Container maxWidth="md" style={{padding: 0, paddingBottom: '4vh'}}>
-	  <Add items={items}/>
+	  <AddContainer/>
 	</Container>
   );
 };

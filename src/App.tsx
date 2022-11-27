@@ -43,7 +43,7 @@ const App = () => {
           <Route path="/post-add" render={()=><PostAddContainer/>}/>
           <Route path="/profile" render={()=><Profile/>}/>
           <Route path="/my-account" render={()=><MyAccount/>}/>
-          {/*<Route path="/favorites" render={()=><FavoritesContainer/>}/>*/}
+          <Route path="/favorites" render={()=><FavoritesContainer/>}/>
           <Route path="/messages" render={()=><DialogsContainer/>}/>
         </Switch>
         <Footer/>

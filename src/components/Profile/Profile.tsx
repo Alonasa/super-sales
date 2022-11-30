@@ -2,7 +2,7 @@ import React, {MouseEvent, useState} from 'react';
 import s from './Profile.module.css'
 import {
   Button,
-  Container, FormControl, InputLabel, MenuItem, Select,
+  Container,
   ToggleButton,
   ToggleButtonGroup
 } from '@mui/material';
@@ -78,22 +78,38 @@ export const Profile = () => {
 			  </div>
 			  <div className={`${s.profile__mode} ${viewMode}`}>
 				<div id="all-ads">
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
-				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add
+				  Add Add Add Add Add Add Add Add Add Add Add Add Add Add Add
+				  Add Add
 				  Add Add Add Add Add Add Add Add Add Add Add Add Add
 				</div>
 				<div id="about">

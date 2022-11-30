@@ -9,10 +9,12 @@ import {
 import {FavoriteBorder} from '@mui/icons-material';
 import {ViewMode} from '../Sorting/ViewMode';
 import {Sorting} from '../Sorting/Sorting';
+import axios from 'axios';
 
 export const Profile = () => {
   const [selected, setSelected] = useState('all-ads');
   const [viewMode, setViewMode] = useState(s.profile__mode_list)
+  let [users, setUsers]=useState([]);
   
   const handleChange = (event: MouseEvent<HTMLElement>, selectedButton: string) => {
 	setSelected(selectedButton);
@@ -31,6 +33,12 @@ export const Profile = () => {
 	}
   }
   
+  axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
+	 
+	}
+  )
+  
+  
   return (
 	<>
 	  <Container>
@@ -39,7 +47,7 @@ export const Profile = () => {
 			   alt={'this is my avatar'}
 			   src={'https://cdn4.iconfinder.com/data/icons/must-have-outline/100/objects-29-1024.png'}/>
 		  <div>
-			<h2 className={s.profile__title}>My name or company name</h2>
+			<h2 className={s.profile__title}></h2>
 			<ul className={s.profile__activity}>
 			  <li>Last activity: <span>01/31/2022</span></li>
 			  <li>Date registration: <span>01/31/2022</span></li>
